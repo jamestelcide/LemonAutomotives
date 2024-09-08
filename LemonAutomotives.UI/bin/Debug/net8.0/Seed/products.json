@@ -1,0 +1,32 @@
+[
+  {
+    "ProductID": "FEC15166-FF7E-49A6-B404-AECDD6872CDA",
+    "ProductName": "Fiat 500",
+    "ProductManufacturer": "Fiat",
+    "ProductModel": "500",
+    "ProductPurchasePrice": 5000.00,
+    "ProductSalePrice": null,
+    "ProductQty": 5,
+    "ProductCommission": 0.20
+  },
+  {
+    "ProductID": "B9F2C219-8AFF-4694-B405-2E7CDE670758",
+    "ProductName": "Chrysler 300",
+    "ProductManufacturer": "Chrysler",
+    "ProductModel": "300",
+    "ProductPurchasePrice": 3000.00,
+    "ProductSalePrice": null,
+    "ProductQty": 2,
+    "ProductCommission": 0.09
+  },
+  {
+    "ProductID": "32B4ADB0-6C06-47AC-8EE8-BB3E4C14FE36",
+    "ProductName": "Jeep Grand Cherokee",
+    "ProductManufacturer": "Jeep",
+    "ProductModel": "Grand Cherokee",
+    "ProductPurchasePrice": 4000.00,
+    "ProductSalePrice": null,
+    "ProductQty": 1,
+    "ProductCommission": 0.05
+  }
+]

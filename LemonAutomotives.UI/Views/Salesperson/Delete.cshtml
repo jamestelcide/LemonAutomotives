@@ -1,0 +1,65 @@
+﻿@model SalespersonResponseDto
+
+@{
+    ViewBag.Title = "Delete Salesperson";
+    ViewBag.CurrentUrl = "~/Salesperson/Delete";
+}
+
+<div class="container">
+    <div class="white-container">
+        <a asp-controller="Salesperson" asp-action="Index">Back to Salespersons List</a>
+
+        <h3>Are you sure you would like to delete this Salesperson?</h3>
+
+        <form asp-controller="Salesperson" asp-action="Delete" method="post">
+            <input type="hidden" asp-for="SalespersonID" />
+            <div class="form-group">
+                <label asp-for="SalespersonFirstName">First Name</label>
+                <input asp-for="SalespersonFirstName" disabled="disabled" />
+                <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalespersonLastName">Last Name</label>
+                <input asp-for="SalespersonLastName" disabled="disabled" />
+                <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalespersonAddress">Address</label>
+                <input asp-for="SalespersonAddress" disabled="disabled" />
+                <span asp-validation-for="SalespersonAddress" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalespersonPhone">Phone</label>
+                <input asp-for="SalespersonPhone" disabled="disabled" />
+                <span asp-validation-for="SalespersonPhone" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalespersonStartDate">Start Date</label>
+                <input asp-for="SalespersonStartDate" disabled="disabled" />
+                <span asp-validation-for="SalespersonStartDate" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalespersonTerminationDate">Termination Date</label>
+                <input asp-for="SalespersonTerminationDate" disabled="disabled" />
+                <span asp-validation-for="SalespersonTerminationDate" style="color: red;"></span>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary">Delete</button>
+                <div asp-validation-summary="All" style="color: red;"></div>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div>
+                        <ul>
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li>@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </form>
+    </div>
+    
+</div>

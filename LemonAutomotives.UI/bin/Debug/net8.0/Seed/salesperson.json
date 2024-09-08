@@ -1,0 +1,38 @@
+[
+  {
+    "SalespersonID": "800C3EB8-A586-48E2-AEBA-8FE3D0E20306",
+    "SalespersonFirstName": "Hunter",
+    "SalespersonLastName": "Lahr",
+    "SalespersonAddress": "2840 Gambler Lane",
+    "SalespersonPhone": "801-306-2352",
+    "SalespersonStartDate": "2023-01-01",
+    "SalespersonTerminationDate": null
+  },
+  {
+    "SalespersonID": "496CEE1E-59B5-4E2C-A6E9-EBFAB5D3DD92",
+    "SalespersonFirstName": "John",
+    "SalespersonLastName": "Stewart",
+    "SalespersonAddress": "2408 Hart Ridge Road",
+    "SalespersonPhone": "201-395-1953",
+    "SalespersonStartDate": "2023-01-01",
+    "SalespersonTerminationDate": null
+  },
+  {
+    "SalespersonID": "0890303A-B802-457A-B56E-AEC2BFBEAD68",
+    "SalespersonFirstName": "Dennis",
+    "SalespersonLastName": "Luczak",
+    "SalespersonAddress": "2949 Juniper Drive",
+    "SalespersonPhone": "814-393-4893",
+    "SalespersonStartDate": "2023-01-01",
+    "SalespersonTerminationDate": "2023-06-28"
+  },
+  {
+    "SalespersonID": "3C8125D8-71D3-455A-99B9-93BAF8B3F6DD",
+    "SalespersonFirstName": "Debra",
+    "SalespersonLastName": "Roger",
+    "SalespersonAddress": "4291 Harley Vincent Drive",
+    "SalespersonPhone": "203-387-2069",
+    "SalespersonStartDate": "2022-01-01",
+    "SalespersonTerminationDate": null
+  }
+]

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SalespersonResponseDto>
+
+@{
+    ViewBag.Title = "Salespersons";
+    ViewBag.CurrentUrl = "~/Salesperson/Index";
+}
+<div class="container">
+    <div class="white-container">
+        <h1>Salespersons</h1><br /><br />
+        <form asp-controller="Salesperson" asp-action="Index" method="get">
+            <div>
+                <label>Search by:</label>
+                <select name="searchBy">
+                    @foreach (var searchField in ViewBag.SearchFields)
+                    {
+                        if (searchField.Key == ViewBag.CurrentSearchBy)
+                        {
+                            <option value="@searchField.Key" selected="selected">@searchField.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@searchField.Key">@searchField.Value</option>
+                        }
+                    }
+                </select>
+                <input type="search" id="Search" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+                <button>Search</button>
+                <a asp-controller="Salesperson" asp-action="Index">Clear all</a>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Termination Date</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SalespersonResponseDto salesperson in Model)
+                    {
+                        <tr scope="row">
+                            <td>@salesperson.SalespersonFirstName</td>
+                            <td>@salesperson.SalespersonLastName</td>
+                            <td>@salesperson.SalespersonAddress</td>
+                            <td>@salesperson.SalespersonPhone</td>
+                            <td>@salesperson.SalespersonStartDate</td>
+                            <td>@salesperson.SalespersonTerminationDate</td>
+                            <td>
+                                <a asp-controller="Salesperson" asp-action="Edit" asp-route-SalespersonID="@salesperson.SalespersonID">Edit</a>
+                                <a asp-controller="Salesperson" asp-action="Delete" asp-route-SalespersonID="@salesperson.SalespersonID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+        <a asp-controller="Salesperson" asp-action="Create"><button class="btn btn-outline-primary">Create Person</button></a>
+    </div>
+</div>

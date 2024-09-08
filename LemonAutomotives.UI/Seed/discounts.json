@@ -1,0 +1,23 @@
+[
+  {
+    "DiscountID": "83757245-6D97-4147-A208-70A9A9864CF3",
+    "ProductID": null,
+    "BeginDate": "2023-12-01",
+    "EndDate": "2023-12-31",
+    "DiscountPercentage": 0.20
+  },
+  {
+    "DiscountID": "DE69E429-4D55-4438-981F-5DB222251600",
+    "ProductID": null,
+    "BeginDate": "2023-11-01",
+    "EndDate": "2023-11-30",
+    "DiscountPercentage": 0.15
+  },
+  {
+    "DiscountID": "F0CD34F3-7EC2-4903-9001-315F662A498D",
+    "ProductID": null,
+    "BeginDate": "2023-04-08",
+    "EndDate": "2023-04-10",
+    "DiscountPercentage": 0.30
+  }
+]

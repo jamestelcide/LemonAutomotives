@@ -1,0 +1,26 @@
+[
+  {
+    "CustomerID": "B4A7761A-C6F5-435F-BDDB-E09550E4F14C",
+    "CustomerFirstName": "Judith",
+    "CustomerLastName": "Marsh",
+    "CustomerAddress": "4116 Franklin Avenue",
+    "CustomerPhone": "3618758716",
+    "CustomerStartDate": "2023-02-01"
+  },
+  {
+    "CustomerID": "9FFEA449-4C4A-4EE3-9311-5F6FB05E3183",
+    "CustomerFirstName": "Kimberly",
+    "CustomerLastName": "Trombetta",
+    "CustomerAddress": "3847 Burton Avenue",
+    "CustomerPhone": "9015978933",
+    "CustomerStartDate": "2023-04-16"
+  },
+  {
+    "CustomerID": "C79E9FB1-4454-427A-950F-7B2811CD5491",
+    "CustomerFirstName": "Dennis",
+    "CustomerLastName": "Sandoval",
+    "CustomerAddress": "2269 Rose Street",
+    "CustomerPhone": "7082569698",
+    "CustomerStartDate": "2023-08-25"
+  }
+]
