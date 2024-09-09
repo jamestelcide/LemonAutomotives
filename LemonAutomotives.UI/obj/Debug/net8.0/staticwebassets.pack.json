@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\StyleSheet.css",
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {
-      "Id": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\bootstrap.bundle.min.js",
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\bootstrap.min.css",
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo-2.png",
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo-2.png",
       "PackagePath": "staticwebassets\\logo-2.png"
     },
     {
-      "Id": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo.png",
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo.png",
       "PackagePath": "staticwebassets\\logo.png"
     },
     {

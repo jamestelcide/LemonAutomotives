@@ -2,7 +2,6 @@
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
 using LemonAutomotives.Core.ServiceContracts;
-using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
 namespace LemonAutomotives.Core.Services
 {
@@ -66,7 +65,7 @@ namespace LemonAutomotives.Core.Services
                 await _salespersonRepository.GetFilteredSalespersons(s =>
                 s.SalespersonFirstName != null &&
                 s.SalespersonFirstName.Contains(searchString ?? string.Empty)),
-                
+
 
                 nameof(SalespersonResponseDto.SalespersonLastName) =>
                 await _salespersonRepository.GetFilteredSalespersons(s =>
@@ -75,12 +74,12 @@ namespace LemonAutomotives.Core.Services
 
                 nameof(SalespersonResponseDto.SalespersonAddress) =>
                 await _salespersonRepository.GetFilteredSalespersons(s =>
-                s.SalespersonAddress != null && 
+                s.SalespersonAddress != null &&
                 s.SalespersonAddress.Contains(searchString ?? string.Empty)),
 
                 nameof(SalespersonResponseDto.SalespersonPhone) =>
                 await _salespersonRepository.GetFilteredSalespersons(s =>
-                s.SalespersonPhone != null && 
+                s.SalespersonPhone != null &&
                 s.SalespersonPhone.Contains(searchString ?? string.Empty)),
 
                 nameof(SalespersonResponseDto.SalespersonStartDate) =>
@@ -108,7 +107,7 @@ namespace LemonAutomotives.Core.Services
             Salesperson? matchingSalesperson = await _salespersonRepository.GetSalespersonByIDAsync(salespersonUpdateRequest.SalespersonID);
             if (matchingSalesperson == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(salespersonUpdateRequest.SalespersonID), "SalespersonID not found.");
             }
 
             matchingSalesperson.SalespersonFirstName = salespersonUpdateRequest.SalespersonFirstName;

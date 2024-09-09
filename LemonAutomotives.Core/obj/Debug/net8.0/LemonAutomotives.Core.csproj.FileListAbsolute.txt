@@ -10,3 +10,16 @@ C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonA
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\refint\LemonAutomotives.Core.dll
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.pdb
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\ref\LemonAutomotives.Core.dll
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\bin\Debug\net8.0\LemonAutomotives.Core.deps.json
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\bin\Debug\net8.0\LemonAutomotives.Core.dll
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\bin\Debug\net8.0\LemonAutomotives.Core.pdb
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.csproj.AssemblyReference.cache
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.AssemblyInfoInputs.cache
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.AssemblyInfo.cs
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.csproj.CoreCompileInputs.cache
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.sourcelink.json
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.dll
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\refint\LemonAutomotives.Core.dll
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\LemonAutomotives.Core.pdb
+C:\devops\repos\LemonAutomotives\LemonAutomotives.Core\obj\Debug\net8.0\ref\LemonAutomotives.Core.dll

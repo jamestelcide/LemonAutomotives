@@ -11,16 +11,16 @@ namespace LemonAutomotives.Core.DTO
         public Guid SalespersonID { get; set; }
         
         [Required(ErrorMessage = "Salesperson first name can not be blank")]
-        public string? SalespersonFirstName { get; set; }
-        
+        public string SalespersonFirstName { get; set; } = string.Empty;
+
         [Required(ErrorMessage = "Salesperson last name can not be blank")]
-        public string? SalespersonLastName { get; set; }
+        public string SalespersonLastName { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson address name can not be blank")]
-        public string? SalespersonAddress { get; set; }
+        public string SalespersonAddress { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson phone number can not be blank")]
-        public string? SalespersonPhone { get; set; }
+        public string SalespersonPhone { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson start date can not be blank")]
         public DateTime SalespersonStartDate { get; set; }

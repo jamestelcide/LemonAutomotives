@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LemonAutomotives.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1acbd7a288870bc93e953b592a9c89ae947b0b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("LemonAutomotives.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LemonAutomotives.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

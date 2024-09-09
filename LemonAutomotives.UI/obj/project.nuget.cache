@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8JNZp92UB7s=",
+  "dgSpecHash": "OtjoSesFJaA=",
   "success": true,
-  "projectFilePath": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.UI\\LemonAutomotives.UI.csproj",
+  "projectFilePath": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\LemonAutomotives.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\james\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\james\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/jVRI4HHaHg=",
+  "dgSpecHash": "Ume2S0awQNM=",
   "success": true,
-  "projectFilePath": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
+  "projectFilePath": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\james\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.8\\microsoft.aspnetcore.cryptography.internal.8.0.8.nupkg.sha512",
     "C:\\Users\\james\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.8\\microsoft.aspnetcore.cryptography.keyderivation.8.0.8.nupkg.sha512",

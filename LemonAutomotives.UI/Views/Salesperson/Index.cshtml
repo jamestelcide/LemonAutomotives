@@ -47,8 +47,15 @@
                             <td>@salesperson.SalespersonLastName</td>
                             <td>@salesperson.SalespersonAddress</td>
                             <td>@salesperson.SalespersonPhone</td>
-                            <td>@salesperson.SalespersonStartDate</td>
-                            <td>@salesperson.SalespersonTerminationDate</td>
+                            <td>@salesperson.SalespersonStartDate.ToString("MM/dd/yyyy")</td>
+                            @if (salesperson.SalespersonTerminationDate != null)
+                            {
+                                <td>@salesperson.SalespersonTerminationDate.Value.ToString("MM/dd/yyyy")</td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
                             <td>
                                 <a asp-controller="Salesperson" asp-action="Edit" asp-route-SalespersonID="@salesperson.SalespersonID">Edit</a>
                                 <a asp-controller="Salesperson" asp-action="Delete" asp-route-SalespersonID="@salesperson.SalespersonID">Delete</a>
@@ -58,6 +65,6 @@
                 </tbody>
             </table>
         </form>
-        <a asp-controller="Salesperson" asp-action="Create"><button class="btn btn-outline-primary">Create Person</button></a>
+        <a asp-controller="Salesperson" asp-action="Create" class="btn btn-outline-primary">Create Person</a>
     </div>
 </div>

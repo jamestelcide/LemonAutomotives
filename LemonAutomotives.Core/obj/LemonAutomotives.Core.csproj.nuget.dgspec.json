@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj": {}
+    "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj": {
+    "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
+        "projectUniqueName": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
         "projectName": "LemonAutomotives.Core",
-        "projectPath": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
+        "projectPath": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\LemonAutomotives.Core.csproj",
         "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Full Stack\\Carreer\\Projects\\07 Lemon Automotives\\LemonAutomotives\\LemonAutomotives.Core\\obj\\",
+        "outputPath": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\james\\AppData\\Roaming\\NuGet\\NuGet.Config",

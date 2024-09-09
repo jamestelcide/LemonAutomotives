@@ -10,13 +10,18 @@ namespace LemonAutomotives.Core.Domain.Entities
         [Key]
         public Guid SalespersonID { get; set; }
         [StringLength(20)]
-        public string? SalespersonFirstName { get; set; }
+        [Required]
+        public string SalespersonFirstName { get; set; } = string.Empty;
         [StringLength(20)]
-        public string? SalespersonLastName { get; set; }
+        [Required]
+        public string SalespersonLastName { get; set; } = string.Empty;
         [StringLength(200)]
-        public string? SalespersonAddress { get; set; }
+        [Required]
+        public string SalespersonAddress { get; set; } = string.Empty;
         [RegularExpression(@"^\+?\d{0,15}$", ErrorMessage = "Please enter a valid phone number.")]
-        public string? SalespersonPhone { get; set; }
+        [Required]
+        public string SalespersonPhone { get; set; } = string.Empty;
+        [Required]
         public DateTime SalespersonStartDate { get; set; }
         public DateTime? SalespersonTerminationDate { get; set; }
 

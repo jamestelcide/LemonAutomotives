@@ -13,3 +13,19 @@ C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonA
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\refint\LemonAutomotives.Infrastructure.dll
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.pdb
 C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\ref\LemonAutomotives.Infrastructure.dll
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\bin\Debug\net8.0\LemonAutomotives.Infrastructure.deps.json
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\bin\Debug\net8.0\LemonAutomotives.Infrastructure.dll
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\bin\Debug\net8.0\LemonAutomotives.Infrastructure.pdb
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\bin\Debug\net8.0\LemonAutomotives.Core.dll
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\bin\Debug\net8.0\LemonAutomotives.Core.pdb
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.csproj.AssemblyReference.cache
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.AssemblyInfoInputs.cache
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.AssemblyInfo.cs
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.csproj.CoreCompileInputs.cache
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.sourcelink.json
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAut.842D5B74.Up2Date
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.dll
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\refint\LemonAutomotives.Infrastructure.dll
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\LemonAutomotives.Infrastructure.pdb
+C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\obj\Debug\net8.0\ref\LemonAutomotives.Infrastructure.dll

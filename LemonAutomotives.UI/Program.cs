@@ -1,5 +1,4 @@
 using LemonAutomotives.UI.StartupExtensions;
-using Microsoft.Extensions.Hosting;
 
 namespace LemonAutomotives.UI
 {

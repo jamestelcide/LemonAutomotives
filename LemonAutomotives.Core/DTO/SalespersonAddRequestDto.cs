@@ -7,10 +7,10 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class SalespersonAddRequestDto
     {
-        public string? SalespersonFirstName { get; set; }
-        public string? SalespersonLastName { get; set; }
-        public string? SalespersonAddress { get; set; }
-        public string? SalespersonPhone { get; set; }
+        public string SalespersonFirstName { get; set; } = string.Empty;
+        public string SalespersonLastName { get; set; } = string.Empty;
+        public string SalespersonAddress { get; set; } = string.Empty;
+        public string SalespersonPhone { get; set; } = string.Empty;
         public DateTime SalespersonStartDate { get; set; }
 
         public Salesperson ToSalesperson()

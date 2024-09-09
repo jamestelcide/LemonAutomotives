@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LemonAutomotives.Infrastructure
-build_property.ProjectDir = C:\Code\Full Stack\Carreer\Projects\07 Lemon Automotives\LemonAutomotives\LemonAutomitives.Infrastructure\
+build_property.ProjectDir = C:\devops\repos\LemonAutomotives\LemonAutomitives.Infrastructure\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -14,7 +14,7 @@
     "SalespersonLastName": "Stewart",
     "SalespersonAddress": "2408 Hart Ridge Road",
     "SalespersonPhone": "201-395-1953",
-    "SalespersonStartDate": "2023-01-01",
+    "SalespersonStartDate": "2023-01-16",
     "SalespersonTerminationDate": null
   },
   {
@@ -23,7 +23,7 @@
     "SalespersonLastName": "Luczak",
     "SalespersonAddress": "2949 Juniper Drive",
     "SalespersonPhone": "814-393-4893",
-    "SalespersonStartDate": "2023-01-01",
+    "SalespersonStartDate": "2023-01-20",
     "SalespersonTerminationDate": "2023-06-28"
   },
   {
@@ -32,7 +32,7 @@
     "SalespersonLastName": "Roger",
     "SalespersonAddress": "4291 Harley Vincent Drive",
     "SalespersonPhone": "203-387-2069",
-    "SalespersonStartDate": "2022-01-01",
+    "SalespersonStartDate": "2023-01-12",
     "SalespersonTerminationDate": null
   }
 ]

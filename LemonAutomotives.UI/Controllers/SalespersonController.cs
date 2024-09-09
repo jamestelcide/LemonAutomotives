@@ -8,7 +8,6 @@ namespace LemonAutomotives.UI.Controllers
     public class SalespersonController : Controller
     {
         private readonly ISalespersonService _salespersonService;
-
         public SalespersonController(ISalespersonService salespersonService)
         {
             _salespersonService = salespersonService;
@@ -77,6 +76,11 @@ namespace LemonAutomotives.UI.Controllers
         [Route("[action]/{salespersonID}")]
         public async Task<IActionResult> Delete(Guid? salespersonID)
         {
+            if (!salespersonID.HasValue)
+            {
+                return RedirectToAction("Index");
+            }
+
             SalespersonResponseDto? salespersonResponse = await _salespersonService.GetSalespersonByIDAsync(salespersonID.Value);
             if (salespersonResponse == null) { return RedirectToAction("Index"); }
 

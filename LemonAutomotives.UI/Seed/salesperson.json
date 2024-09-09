@@ -5,7 +5,7 @@
     "SalespersonLastName": "Lahr",
     "SalespersonAddress": "2840 Gambler Lane",
     "SalespersonPhone": "801-306-2352",
-    "SalespersonStartDate": "01-01-2023",
+    "SalespersonStartDate": "2023-01-01",
     "SalespersonTerminationDate": null
   },
   {
@@ -14,7 +14,7 @@
     "SalespersonLastName": "Stewart",
     "SalespersonAddress": "2408 Hart Ridge Road",
     "SalespersonPhone": "201-395-1953",
-    "SalespersonStartDate": "01-16-2023",
+    "SalespersonStartDate": "2023-01-16",
     "SalespersonTerminationDate": null
   },
   {
@@ -23,8 +23,8 @@
     "SalespersonLastName": "Luczak",
     "SalespersonAddress": "2949 Juniper Drive",
     "SalespersonPhone": "814-393-4893",
-    "SalespersonStartDate": "01-20-2023",
-    "SalespersonTerminationDate": "06-28-2023"
+    "SalespersonStartDate": "2023-01-20",
+    "SalespersonTerminationDate": "2023-06-28"
   },
   {
     "SalespersonID": "3C8125D8-71D3-455A-99B9-93BAF8B3F6DD",
@@ -32,7 +32,7 @@
     "SalespersonLastName": "Roger",
     "SalespersonAddress": "4291 Harley Vincent Drive",
     "SalespersonPhone": "203-387-2069",
-    "SalespersonStartDate": "01-12-2023",
+    "SalespersonStartDate": "2023-01-12",
     "SalespersonTerminationDate": null
   }
 ]
