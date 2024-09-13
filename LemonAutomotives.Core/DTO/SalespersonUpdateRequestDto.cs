@@ -20,6 +20,7 @@ namespace LemonAutomotives.Core.DTO
         public string SalespersonAddress { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson phone number can not be blank")]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
         public string SalespersonPhone { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson start date can not be blank")]

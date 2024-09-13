@@ -16,7 +16,7 @@ namespace LemonAutomotives.UI.Controllers
         [Route("[action]")]
         public async Task<IActionResult> Index(string searchBy, string? searchString)
         {
-            List<SalespersonResponseDto> salespersonList = await _salespersonService.GetFilteredSalespersons(searchBy, searchString);
+            List<SalespersonResponseDto> salespersonList = await _salespersonService.GetFilteredSalespersonsAsync(searchBy, searchString);
 
             ViewBag.SearchFields = new Dictionary<string, string>()
             {

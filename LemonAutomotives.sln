@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.Core", "Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.Infrastructure", "LemonAutomitives.Infrastructure\LemonAutomotives.Infrastructure.csproj", "{8CD16D74-C132-4B9B-93A1-401602FA6FB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonAutomotives.UI", "LemonAutomotives.UI\LemonAutomotives.UI.csproj", "{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.UI", "LemonAutomotives.UI\LemonAutomotives.UI.csproj", "{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonAutomotives.ServiceTests", "LemonAutomotives.ServiceTests\LemonAutomotives.ServiceTests.csproj", "{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonAutomotives.ControllerTests", "LemonAutomotives.ControllerTests\LemonAutomotives.ControllerTests.csproj", "{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,14 @@ Global
 		{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +51,8 @@ Global
 		{AE7D468B-8520-4C74-94B8-3BE02F4E28D1} = {425EBE5A-2072-45FC-8984-2ED0A213A49E}
 		{8CD16D74-C132-4B9B-93A1-401602FA6FB7} = {425EBE5A-2072-45FC-8984-2ED0A213A49E}
 		{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9} = {425EBE5A-2072-45FC-8984-2ED0A213A49E}
+		{3DC15F95-39AA-4C06-B152-6F5F82DA3D97} = {DC502AB4-004E-48BA-9D9D-B9494D4A57E8}
+		{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA} = {DC502AB4-004E-48BA-9D9D-B9494D4A57E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6D2CF465-3198-4D7F-8873-BF185940AD09}

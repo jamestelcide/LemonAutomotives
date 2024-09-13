@@ -22,6 +22,11 @@ namespace LemonAutomotives.Core.Services
                 throw new ArgumentNullException(nameof(salespersonAddRequest));
             }
 
+            if(salespersonAddRequest.SalespersonFirstName == null)
+            {
+                throw new ArgumentNullException(nameof(salespersonAddRequest));
+            }
+
             //Converts object from salespersonAddRequest to salesperson type
             Salesperson salesperson = salespersonAddRequest.ToSalesperson();
 
@@ -55,7 +60,7 @@ namespace LemonAutomotives.Core.Services
             return salespersonResponseFromList.ToSalespersonResponse();
         }
 
-        public async Task<List<SalespersonResponseDto>> GetFilteredSalespersons(string searchBy, string? searchString)
+        public async Task<List<SalespersonResponseDto>> GetFilteredSalespersonsAsync(string searchBy, string? searchString)
         {
             List<Salesperson> salespersons;
 

@@ -33,7 +33,7 @@ namespace LemonAutomotives.Core.ServiceContracts
         /// <param name="searchBy">Search field to search</param>
         /// <param name="searchString">Search string to search</param>
         /// <returns>Returns all matching salespersons based on the given search field and search string</returns>
-        Task<List<SalespersonResponseDto>> GetFilteredSalespersons(string searchBy, string? searchString);
+        Task<List<SalespersonResponseDto>> GetFilteredSalespersonsAsync(string searchBy, string? searchString);
         
         /// <summary>
         /// Updates the specified Salesperson details based on the given SalespersonID

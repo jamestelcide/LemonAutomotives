@@ -18,7 +18,7 @@ namespace LemonAutomotives.Core.Domain.Entities
         [StringLength(200)]
         [Required]
         public string SalespersonAddress { get; set; } = string.Empty;
-        [RegularExpression(@"^\+?\d{0,15}$", ErrorMessage = "Please enter a valid phone number.")]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
         [Required]
         public string SalespersonPhone { get; set; } = string.Empty;
         [Required]
