@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\devops\\repos\\LemonAutomotives\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}|LemonAutomotives.ControllerTests\\LemonAutomotives.ControllerTests.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.controllertests\\salespersoncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}|LemonAutomotives.ControllerTests\\LemonAutomotives.ControllerTests.csproj|solutionrelative:lemonautomotives.controllertests\\salespersoncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.ui\\startupextensions\\configureservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|solutionrelative:lemonautomotives.ui\\startupextensions\\configureservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.ui\\controllers\\salespersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|solutionrelative:lemonautomotives.ui\\controllers\\salespersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\servicecontracts\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\servicecontracts\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.ui\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|solutionrelative:lemonautomotives.ui\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|solutionrelative:lemonautomotives.ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.ui\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}|LemonAutomotives.UI\\LemonAutomotives.UI.csproj|solutionrelative:lemonautomotives.ui\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\domain\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\domain\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\services\\salespersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\services\\salespersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}|LemonAutomotives.ServiceTests\\LemonAutomotives.ServiceTests.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.servicetests\\salespersonservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}|LemonAutomotives.ServiceTests\\LemonAutomotives.ServiceTests.csproj|solutionrelative:lemonautomotives.servicetests\\salespersonservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\domain\\entities\\salesperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\domain\\entities\\salesperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|c:\\devops\\repos\\lemonautomotives\\lemonautomotives.core\\servicecontracts\\isalespersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7D468B-8520-4C74-94B8-3BE02F4E28D1}|LemonAutomotives.Core\\LemonAutomotives.Core.csproj|solutionrelative:lemonautomotives.core\\servicecontracts\\isalespersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,65 +91,111 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SalespersonControllerTest.cs",
-              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.ControllerTests\\SalespersonControllerTest.cs",
-              "RelativeDocumentMoniker": "LemonAutomotives.ControllerTests\\SalespersonControllerTest.cs",
-              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.ControllerTests\\SalespersonControllerTest.cs",
-              "RelativeToolTip": "LemonAutomotives.ControllerTests\\SalespersonControllerTest.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAcwJwAAAASAAAA",
+              "Title": "ConfigureServicesExtension.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\StartupExtensions\\ConfigureServicesExtension.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.UI\\StartupExtensions\\ConfigureServicesExtension.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\StartupExtensions\\ConfigureServicesExtension.cs",
+              "RelativeToolTip": "LemonAutomotives.UI\\StartupExtensions\\ConfigureServicesExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:34:43.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SalespersonController.cs",
-              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Controllers\\SalespersonController.cs",
-              "RelativeDocumentMoniker": "LemonAutomotives.UI\\Controllers\\SalespersonController.cs",
-              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Controllers\\SalespersonController.cs",
-              "RelativeToolTip": "LemonAutomotives.UI\\Controllers\\SalespersonController.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAiwGQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:33:30.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SalespersonServiceTest.cs",
-              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.ServiceTests\\SalespersonServiceTest.cs",
-              "RelativeDocumentMoniker": "LemonAutomotives.ServiceTests\\SalespersonServiceTest.cs",
-              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.ServiceTests\\SalespersonServiceTest.cs",
-              "RelativeToolTip": "LemonAutomotives.ServiceTests\\SalespersonServiceTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T19:57:50.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SalespersonService.cs",
-              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\SalespersonService.cs",
-              "RelativeDocumentMoniker": "LemonAutomotives.Core\\Services\\SalespersonService.cs",
-              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\SalespersonService.cs",
-              "RelativeToolTip": "LemonAutomotives.Core\\Services\\SalespersonService.cs",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAQwHIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T23:28:43.34Z",
+              "WhenOpened": "2024-09-15T21:41:07.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Salesperson.cs",
-              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Domain\\Entities\\Salesperson.cs",
-              "RelativeDocumentMoniker": "LemonAutomotives.Core\\Domain\\Entities\\Salesperson.cs",
-              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Domain\\Entities\\Salesperson.cs",
-              "RelativeToolTip": "LemonAutomotives.Core\\Domain\\Entities\\Salesperson.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAABIAAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LemonAutomotives.UI\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LemonAutomotives.UI\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:36:40.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "LemonAutomotives.UI\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "LemonAutomotives.UI\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:31:30.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.UI\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "LemonAutomotives.UI\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T16:24:30.13Z"
+              "WhenOpened": "2024-09-15T21:22:46.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SalespersonService.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\SalespersonService.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.Core\\Services\\SalespersonService.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\SalespersonService.cs",
+              "RelativeToolTip": "LemonAutomotives.Core\\Services\\SalespersonService.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAxwHEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T03:03:17.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Domain\\Entities\\Customer.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.Core\\Domain\\Entities\\Customer.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Domain\\Entities\\Customer.cs",
+              "RelativeToolTip": "LemonAutomotives.Core\\Domain\\Entities\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T21:12:03.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.Core\\Services\\CustomerService.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\Services\\CustomerService.cs",
+              "RelativeToolTip": "LemonAutomotives.Core\\Services\\CustomerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T03:00:17.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\ServiceContracts\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.Core\\ServiceContracts\\ICustomerService.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\ServiceContracts\\ICustomerService.cs",
+              "RelativeToolTip": "LemonAutomotives.Core\\ServiceContracts\\ICustomerService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T02:57:45.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISalespersonService.cs",
+              "DocumentMoniker": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\ServiceContracts\\ISalespersonService.cs",
+              "RelativeDocumentMoniker": "LemonAutomotives.Core\\ServiceContracts\\ISalespersonService.cs",
+              "ToolTip": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.Core\\ServiceContracts\\ISalespersonService.cs",
+              "RelativeToolTip": "LemonAutomotives.Core\\ServiceContracts\\ISalespersonService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAcwCIAAABoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T02:57:35.694Z"
             }
           ]
         }

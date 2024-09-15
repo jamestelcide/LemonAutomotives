@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,12 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// Returns all customers in the data store
         /// </summary>
         /// <returns>List of customer objects from table</returns>
-        Task<Customer> GetAllCustomers();
+        Task<List<Customer>> GetAllCustomersAsync();
+        /// <summary>
+        /// Returns all Customer objects based on the given expression
+        /// </summary>
+        /// <param name="predicate">LINQ expression to check</param>
+        /// <returns>All matching Salespersons with a given condition</returns>
+        Task<List<Customer>> GetFilteredCustomers(Expression<Func<Customer, bool>> predicate);
     }
 }

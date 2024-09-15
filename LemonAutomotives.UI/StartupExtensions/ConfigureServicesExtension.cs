@@ -14,6 +14,9 @@ namespace LemonAutomotives.UI.StartupExtensions
             services.AddControllersWithViews();
             services.AddScoped<ISalespersonRepository, SalespersonRepository>();
             services.AddScoped<ISalespersonService, SalespersonService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));

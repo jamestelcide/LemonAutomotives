@@ -71,7 +71,6 @@ namespace LemonAutomotives.Core.Services
                 s.SalespersonFirstName != null &&
                 s.SalespersonFirstName.Contains(searchString ?? string.Empty)),
 
-
                 nameof(SalespersonResponseDto.SalespersonLastName) =>
                 await _salespersonRepository.GetFilteredSalespersons(s =>
                 s.SalespersonLastName != null &&
