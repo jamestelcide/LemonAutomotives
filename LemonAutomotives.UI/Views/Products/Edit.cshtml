@@ -1,0 +1,80 @@
+﻿@model ProductUpdateRequestDto
+
+@{
+    ViewBag.Title = "Edit Product";
+    ViewBag.CurrentUrl = "~/Products/Edit";
+}
+<div class="container">
+    <div class="white-container">
+        <h3>Edit Product</h3><br /><br />
+
+        <a asp-controller="Products" asp-action="Index">Back to Product List</a>
+
+        <form asp-controller="Products" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="ProductID" />
+            <div class="form-group">
+                <label asp-for="ProductName">Product Name</label>
+                <input asp-for="ProductName" />
+                <span asp-validation-for="ProductName" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductManufacturer">Product Manufacturer</label>
+                <input asp-for="ProductManufacturer" />
+                <span asp-validation-for="ProductManufacturer" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductModel">Product Model</label>
+                <input asp-for="ProductModel" />
+                <span asp-validation-for="ProductModel" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPurchasePrice">ProductPurchasePrice</label>
+                <input asp-for="ProductPurchasePrice" type="number" />
+                <span asp-validation-for="ProductPurchasePrice" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductSalePrice">Product Sale Price</label>
+                <input asp-for="ProductSalePrice" type="number" />
+                <span asp-validation-for="ProductSalePrice" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductQty">Product Quantity</label>
+                <input asp-for="ProductQty" type="number"/>
+                <span asp-validation-for="ProductQty" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCommission">Product Commission</label>
+                <input asp-for="ProductCommission" type="number" />
+                <span asp-validation-for="ProductCommission" style="color: red;"></span>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary">Update</button>
+                <div asp-validation-summary="All" style="color: red;"></div>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div>
+                        <ul>
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li>@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.validator.unobstrusive" asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+}

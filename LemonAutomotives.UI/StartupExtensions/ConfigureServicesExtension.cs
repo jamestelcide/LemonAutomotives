@@ -16,6 +16,8 @@ namespace LemonAutomotives.UI.StartupExtensions
             services.AddScoped<ISalespersonService, SalespersonService>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IProductsRepository, ProductsRepository>();
+            services.AddScoped<IProductsService, ProductService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {

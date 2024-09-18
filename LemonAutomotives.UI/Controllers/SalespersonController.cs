@@ -50,9 +50,7 @@ namespace LemonAutomotives.UI.Controllers
         public async Task<IActionResult> Edit(Guid salespersonID)
         {
             SalespersonResponseDto? salespersonResponse = await _salespersonService.GetSalespersonByIDAsync(salespersonID);
-
             if (salespersonResponse == null) { return RedirectToAction("Index"); }
-
             SalespersonUpdateRequestDto salespersonUpdateRequest = salespersonResponse.ToSalespersonUpdateRequest();
 
             return View(salespersonUpdateRequest);

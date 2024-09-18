@@ -46,17 +46,10 @@ namespace LemonAutomotives.Core.Services
 
         public async Task<SalespersonResponseDto?> GetSalespersonByIDAsync(Guid? salespersonID)
         {
-            if (salespersonID == null)
-            {
-                return null;
-            }
+            if (salespersonID == null) { return null; }
             Salesperson? salespersonResponseFromList = await _salespersonRepository.GetSalespersonByIDAsync(salespersonID.Value);
 
-            if (salespersonResponseFromList == null)
-            {
-                return null;
-            }
-
+            if (salespersonResponseFromList == null) { return null; }
             return salespersonResponseFromList.ToSalespersonResponse();
         }
 

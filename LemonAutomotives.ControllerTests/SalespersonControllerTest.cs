@@ -17,7 +17,6 @@ namespace LemonAutomotives.ControllerTests
         public SalespersonControllerTest()
         {
             _fixture = new Fixture();
-
             _salespersonServiceMock = new Mock<ISalespersonService>();
             _salespersonService = _salespersonServiceMock.Object;
         }

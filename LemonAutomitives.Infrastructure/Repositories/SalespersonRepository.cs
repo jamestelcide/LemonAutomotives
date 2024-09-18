@@ -9,7 +9,6 @@ namespace LemonAutomotives.Infrastructure.Repositories
     public class SalespersonRepository : ISalespersonRepository
     {
         private readonly ApplicationDbContext _db;
-
         public SalespersonRepository(ApplicationDbContext db)
         {
             _db = db;
@@ -55,7 +54,6 @@ namespace LemonAutomotives.Infrastructure.Repositories
             matchingSalesperson.SalespersonTerminationDate = salesperson.SalespersonTerminationDate;
 
             await _db.SaveChangesAsync();
-
             return matchingSalesperson;
         }
 

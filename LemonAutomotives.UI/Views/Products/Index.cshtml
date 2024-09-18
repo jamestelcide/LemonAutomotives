@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProductResponseDto>
+
+@{
+    ViewBag.Title = "Products";
+    ViewBag.CurrentUrl = "~/Products/Index";
+}
+<div class="container">
+    <div class="white-container">
+        <h1>Products</h1><br /><br />
+        <form asp-controller="Products" asp-action="Index" method="get">
+            <div>
+                <label>Search by:</label>
+                <select name="searchBy">
+                    @foreach (var searchField in ViewBag.SearchFields)
+                    {
+                        if (searchField.Key == ViewBag.CurrentSearchBy)
+                        {
+                            <option value="@searchField.Key" selected="selected">@searchField.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@searchField.Key">@searchField.Value</option>
+                        }
+                    }
+                </select>
+                <input type="search" id="Search" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+                <button>Search</button>
+                <a asp-controller="Products" asp-action="Index">Clear all</a>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Manufacturer</th>
+                        <th scope="col">Product Model</th>
+                        <th scope="col">Product Purchase Price</th>
+                        <th scope="col">Product Sale Price</th>
+                        <th scope="col">Product Quantity</th>
+                        <th scope="col">Product Commission</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (ProductResponseDto product in Model)
+                    {
+                        <tr scope="row">
+                            <td>@product.ProductName</td>
+                            <td>@product.ProductManufacturer</td>
+                            <td>@product.ProductModel</td>
+                            <td>@product.ProductPurchasePrice</td>
+                            @if(product.ProductSalePrice != null)
+                            {
+                                <td>@product.ProductSalePrice</td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+                            <td>@product.ProductQty</td>
+                            <td>@product.ProductCommission</td>
+                            <td>
+                                <a asp-controller="Products" asp-action="Edit" asp-route-ProductID="@product.ProductID">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

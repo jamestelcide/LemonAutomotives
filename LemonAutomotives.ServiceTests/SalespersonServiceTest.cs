@@ -35,7 +35,7 @@ namespace LemonAutomotives.ServiceTests
         #region AddSalesperson
         //when we supply null value as SalespersonAddRequest, it should throw ArgumentNullException
         [Fact]
-        public async Task AddSalespersonAsync_NullPerson_ToBeArgumentNullException()
+        public async Task AddSalespersonAsync_NullSalesperson_ToBeArgumentNullException()
         {
             //Arrange
             SalespersonAddRequestDto? salespersonAddRequestDto = null;
@@ -264,7 +264,7 @@ namespace LemonAutomotives.ServiceTests
         }
 
         [Fact]
-        public async Task UpdateSalespersonAsync_InvalidPersonID_ToBeArgumentException()
+        public async Task UpdateSalespersonAsync_InvalidSalespersonID_ToBeArgumentException()
         {
             //Arrange
             SalespersonUpdateRequestDto? salespersonUpdateRequest = _fixture.Build<SalespersonUpdateRequestDto>().Create();
@@ -300,7 +300,7 @@ namespace LemonAutomotives.ServiceTests
 
         #region DeleteSalespersonAsync
         [Fact]
-        public async Task DeleteSalespersonAsync_ValidPersonID_ToBeSuccessful()
+        public async Task DeleteSalespersonAsync_ValidSalespersonID_ToBeSuccessful()
         {
             //Arrange
             Salesperson salesperson = _fixture.Build<Salesperson>().Without(s => s.Sales).Create();
