@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4PZKOTVub7GUqlHsmW0YuCtrGexfS+RLdvnzy8oJ82c=",
+  "Hash": "geFLvfsUmq6AmvuXD3udxZmCeEwXeQJnjkuuwtrf/Nw=",
   "Source": "LemonAutomotives.UI",
   "BasePath": "_content/LemonAutomotives.UI",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "wwwroot\\bootstrap.min.css"
     },
     {
+      "Identity": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\error.png",
+      "SourceId": "LemonAutomotives.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\",
+      "BasePath": "_content/LemonAutomotives.UI",
+      "RelativePath": "error.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\error.png"
+    },
+    {
       "Identity": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo.png",
       "SourceId": "LemonAutomotives.UI",
       "SourceType": "Discovered",
@@ -72,25 +91,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\logo.png"
-    },
-    {
-      "Identity": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo-2.png",
-      "SourceId": "LemonAutomotives.UI",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\",
-      "BasePath": "_content/LemonAutomotives.UI",
-      "RelativePath": "logo-2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\logo-2.png"
     },
     {
       "Identity": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\StyleSheet.css",

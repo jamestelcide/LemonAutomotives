@@ -1,4 +1,5 @@
 ﻿using LemonAutomotives.Core.DTO;
+using LemonAutomotives.Core.Exceptions;
 using LemonAutomotives.Core.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,14 +22,38 @@ namespace LemonAutomotives.UI.Controllers
             ViewBag.SearchFields = new Dictionary<string, string>()
             {
                 { nameof(ProductResponseDto.ProductName), "Product Name"},
-                { nameof(ProductResponseDto.ProductManufacturer), "Product Name"},
-                { nameof(ProductResponseDto.ProductModel), "Product Name"},
-                { nameof(ProductResponseDto.ProductPurchasePrice), "Product Name"},
-                { nameof(ProductResponseDto.ProductSalePrice), "Product Name"},
-                { nameof(ProductResponseDto.ProductQty), "Product Name"},
-                { nameof(ProductResponseDto.ProductCommission), "Product Name"}
+                { nameof(ProductResponseDto.ProductManufacturer), "Product Manufacturer"},
+                { nameof(ProductResponseDto.ProductModel), "Product Model"},
+                { nameof(ProductResponseDto.ProductPurchasePrice), "Product Purchase Price"},
+                { nameof(ProductResponseDto.ProductSalePrice), "Product Sale Price"},
+                { nameof(ProductResponseDto.ProductQty), "Product Quantity"},
+                { nameof(ProductResponseDto.ProductCommission), "Product Commission"}
             };
             return View(productList);
+        }
+
+        [Route("[action]")]
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductAddRequestDto productRequest)
+        {
+            try
+            {
+                await _productsService.AddProductAsync(productRequest);
+                return RedirectToAction("Index", "Products");
+            }
+            catch (DuplicateProductException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Error", "Home");
+            }
+            
         }
 
         [HttpGet]

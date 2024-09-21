@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SalesResponseDto>
+
+@{
+    ViewBag.Title = "Sales";
+    ViewBag.CurrentUrl = "~/Sales/Index";
+}
+<div class="container">
+    <div class="white-container">
+        <h1>Sales</h1><br /><br />
+        <form asp-controller="Sales" asp-action="Index" method="get">
+            <div>
+                <label>Search by:</label>
+                <select name="searchBy">
+                    @foreach (var searchField in ViewBag.SearchFields)
+                    {
+                        if (searchField.Key == ViewBag.CurrentSearchBy)
+                        {
+                            <option value="@searchField.Key" selected="selected">@searchField.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@searchField.Key">@searchField.Value</option>
+                        }
+                    }
+                </select>
+                <input type="search" id="Search" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+                <button>Search</button>
+                <a asp-controller="Sales" asp-action="Index">Clear all</a>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Salesperson</th>
+                        <th scope="col">Customer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SalesResponseDto sales in Model)
+                    {
+                        <tr scope="row">
+                            <td>@sales.ProductID</td>
+                            <td>@sales.SalespersonID</td>
+                            <td>@sales.CustomerID</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+        <a asp-controller="Sales" asp-action="Create" class="btn btn-outline-warning">Create Sale</a>
+    </div>
+</div>

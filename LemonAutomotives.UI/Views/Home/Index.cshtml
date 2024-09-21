@@ -1,8 +1,84 @@
-﻿
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.CurrentUrl = "~/Home/Index";
+}
 
-<div class="container">
-    <div class="white-container">
-        <h1>Quarterly Salesperson Commission Report</h1>
+<section class="hero-section text-center py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Manage car sales with ease, Never miss a report again!</h1>
+        <p class="lead my-4">
+            Supporting your automotive business with simple & powerful digital tools.
+        </p>
+        <div class="input-group my-3 w-50 mx-auto">
+            <input type="email" class="form-control" placeholder="Enter email to">
+            <button class="btn btn-warning">Get Started</button>
+        </div>
     </div>
-    
+</section>
+
+<div class="container mb-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm commission-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="commission-details">
+                        <p class="m-0">John Smith</p>
+                        <p class="commission-value">Commission: $16,580</p>
+                        <p>Date: January 12, 2024</p>
+                    </div>
+                </div>
+                <div class="commission-options mt-3">
+                    <button class="btn btn-outline-secondary me-2">Check Sales</button>
+                    <button class="btn btn-outline-secondary text-nowrap">Edit Salesperson</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<section class="features py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Products</h3>
+                <p>Create a range of automotive listings.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Salespersons</h3>
+                <p>Onboard salespersons with ease with intuitive tooling.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Customers</h3>
+                <p>Track your customers and their purchases to get up to date info on which products are selling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="callout-section text-white py-5">
+    <div class="container text-center">
+        <h2>Maximize your sales tracking with up to date Quarterly Salesperson Commission Reports.</h2>
+        <p class="my-4">Log in today and say goodbye to stressful sales tracking forever.</p>
+        <button class="btn btn-light">Get Started Now</button>
+    </div>
+</section>
+
+<section class="pricing py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <div class="card p-4 shadow-sm pricing-card">
+                    <h3>Plus Plan</h3>
+                    <p>$5.99/month</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card p-4 shadow-sm pricing-card">
+                    <h3>Premium Plan</h3>
+                    <p>$12.99/month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

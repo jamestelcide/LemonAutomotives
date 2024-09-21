@@ -1,57 +1,59 @@
 ﻿@model SalespersonAddRequestDto
 
 @{
-    ViewBag.Title = "Create Person";
+    ViewBag.Title = "Create Salesperson";
     ViewBag.CurrentUrl = "~/Salesperson/Create";
 }
-<div class="container">
-    <div class="white-container">
-        <a asp-controller="Salesperson" asp-action="Index">Back to Salespersons List</a><br /><br />
-        <h3>Create Salesperson</h3><br /><br />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a asp-controller="Salesperson" asp-action="Index" class="mb-2">Back to Salespersons List</a>
+            <h3 class="text-center mb-4">Create Salesperson</h3>
 
-        <form asp-controller="Salesperson" asp-action="Create" method="post">
-            <div class="form-group">
-                <label asp-for="SalespersonFirstName">First Name</label>
-                <input asp-for="SalespersonFirstName" />
-                <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SalespersonLastName">Last Name</label>
-                <input asp-for="SalespersonLastName" />
-                <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SalespersonAddress">Address</label>
-                <input asp-for="SalespersonAddress" />
-                <span asp-validation-for="SalespersonAddress" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SalespersonPhone">Phone</label>
-                <input asp-for="SalespersonPhone" type="tel"/>
-                <span asp-validation-for="SalespersonPhone" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SalespersonStartDate">Start Date</label>
-                <input asp-for="SalespersonStartDate" />
-                <span asp-validation-for="SalespersonStartDate" style="color: red;"></span>
-            </div>
-            <div>
-                <button class="btn btn-outline-primary">Create</button>
-                <div asp-validation-summary="All" style="color: red;"></div>
+            <form asp-controller="Salesperson" asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="SalespersonFirstName" class="form-label">First Name</label>
+                    <input asp-for="SalespersonFirstName" class="form-control" />
+                    <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SalespersonLastName" class="form-label">Last Name</label>
+                    <input asp-for="SalespersonLastName" class="form-control" />
+                    <span asp-validation-for="SalespersonFirstName" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SalespersonAddress" class="form-label">Address</label>
+                    <input asp-for="SalespersonAddress" class="form-control" />
+                    <span asp-validation-for="SalespersonAddress" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SalespersonPhone" class="form-label">Phone</label>
+                    <input asp-for="SalespersonPhone" type="tel" class="form-control" />
+                    <span asp-validation-for="SalespersonPhone" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SalespersonStartDate" class="form-label">Start Date</label>
+                    <input asp-for="SalespersonStartDate" class="form-control" />
+                    <span asp-validation-for="SalespersonStartDate" style="color: red;"></span>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-outline-warning">Create</button>
+                    <div asp-validation-summary="All" style="color: red;"></div>
 
-                @if (ViewBag.Errors != null)
-                {
-                    <div>
-                        <ul>
-                            @foreach (string error in ViewBag.Errors)
-                            {
-                                <li>@error</li>
-                            }
-                        </ul>
-                    </div>
-                }
-            </div>
-        </form>
+                    @if (ViewBag.Errors != null)
+                    {
+                        <div>
+                            <ul>
+                                @foreach (string error in ViewBag.Errors)
+                                {
+                                    <li>@error</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

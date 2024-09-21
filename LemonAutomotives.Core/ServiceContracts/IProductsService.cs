@@ -39,5 +39,11 @@ namespace LemonAutomotives.Core.ServiceContracts
         /// <param name="productUpdateRequest">Product details to update, including ProductID</param>
         /// <returns>Returns the ProductResponse object after updating</returns>
         Task<ProductResponseDto> UpdateProductAsync(ProductUpdateRequestDto? productUpdateRequest);
+        /// <summary>
+        /// Adds a Product object to the list
+        /// </summary>
+        /// <param name="productAddRequestDto">Product to add</param>
+        /// <returns>Returns the Product object after adding it with a newly generated productID</returns>
+        Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequestDto);
     }
 }

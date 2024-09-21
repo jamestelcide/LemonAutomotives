@@ -1,12 +1,9 @@
-﻿body {
-    background-color: #f9f8f5 !important;
-}
-
+﻿
 .white-container {
-    background-color: #ffffff; 
-    padding: 20px; 
-    border-radius: 10px; 
-    margin: 20px auto; 
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
 }
 
 .white-bg {
@@ -14,5 +11,60 @@
 }
 
 .logo {
-    width: 15%;
+    width: 40%;
 }
+
+/* Hero Section */
+.hero-section {
+    background-color: #f9f8f5;
+}
+
+.commission-card {
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.commission-details {
+    font-size: 14px;
+    color: #4f4f4f;
+}
+
+.commission-value {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+.commission-options .btn {
+    width: 45%;
+}
+
+/* Callout Section */
+.callout-section {
+    background-color: #fcb73f;
+}
+
+    .callout-section h2 {
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+/* Pricing Cards */
+.pricing-card {
+    background-color: #f7f9fb;
+    border-radius: 12px;
+}
+
+/* Footer */
+footer ul li a {
+    color: #fccd0b;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+

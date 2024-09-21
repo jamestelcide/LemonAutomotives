@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.ServiceContracts
     public interface ISalespersonService
     {
         /// <summary>
-        /// Adds a Salesperson object to the list of countries
+        /// Adds a Salesperson object to the list
         /// </summary>
         /// <param name="salespersonAddRequest">Salesperson to add</param>
         /// <returns>Returns the salesperson object after adding it with a newly generated salespersonID</returns>

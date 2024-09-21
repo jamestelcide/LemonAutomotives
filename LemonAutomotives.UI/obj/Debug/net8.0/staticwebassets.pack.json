@@ -13,8 +13,8 @@
       "PackagePath": "staticwebassets\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo-2.png",
-      "PackagePath": "staticwebassets\\logo-2.png"
+      "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\error.png",
+      "PackagePath": "staticwebassets\\error.png"
     },
     {
       "Id": "C:\\devops\\repos\\LemonAutomotives\\LemonAutomotives.UI\\wwwroot\\logo.png",

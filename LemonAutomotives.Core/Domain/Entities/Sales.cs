@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LemonAutomotives.Core.Domain.Entities
 {
@@ -16,7 +11,6 @@ namespace LemonAutomotives.Core.Domain.Entities
         [Key]
         public Guid SaleID { get; set; }
         public DateTime SalesDate { get; set; }
-
         
         //Foreign Key pointing to Product
         public Guid ProductID { get; set; }

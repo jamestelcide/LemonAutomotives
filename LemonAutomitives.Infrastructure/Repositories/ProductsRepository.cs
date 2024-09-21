@@ -14,6 +14,15 @@ namespace LemonAutomotives.Infrastructure.Repositories
             _db = db;
         }
 
+        public async Task<Products> AddProductAsync(Products product)
+        {
+            
+            _db.Products.Add(product);
+            await _db.SaveChangesAsync();
+
+            return product;
+        }
+
         public async Task<List<Products>> GetAllProductsAsync()
         {
             return await _db.Products.ToListAsync();
@@ -47,6 +56,14 @@ namespace LemonAutomotives.Infrastructure.Repositories
 
             await _db.SaveChangesAsync();
             return matchingProduct;
+        }
+        public async Task<Products?> GetProductByDetailsAsync(string productName, string productManufacturer, string productModel)
+        {
+            return await _db.Products
+                .FirstOrDefaultAsync(p =>
+                    p.ProductName == productName &&
+                    p.ProductManufacturer == productManufacturer &&
+                    p.ProductModel == productModel);
         }
     }
 }

@@ -9,10 +9,7 @@ namespace LemonAutomotives.Infrastructure.Repositories
     public class SalespersonRepository : ISalespersonRepository
     {
         private readonly ApplicationDbContext _db;
-        public SalespersonRepository(ApplicationDbContext db)
-        {
-            _db = db;
-        }
+        public SalespersonRepository(ApplicationDbContext db) { _db = db; }
 
         public async Task<Salesperson> AddSalespersonAsync(Salesperson salesperson)
         {

@@ -1,0 +1,55 @@
+﻿@model DiscountResponseDto
+
+@{
+    ViewBag.Title = "Delete Discount";
+    ViewBag.CurrentUrl = "~/Discount/Delete";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a asp-controller="Discount" asp-action="Index" class="mb-2">Back to Discounts List</a>
+            <h3 class="text-center mb-4">Are you sure you would like to delete this Discount?</h3>
+
+            <form asp-controller="Discount" asp-action="Delete" method="post">
+                <input type="hidden" asp-for="DiscountID" />
+                <div class="form-group mb-3">
+                    <label asp-for="BeginDate" class="form-label">Begin Date</label>
+                    <input asp-for="BeginDate" disabled="disabled" class="form-control" />
+                    <span asp-validation-for="BeginDate" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="EndDate" class="form-label">End Date</label>
+                    <input asp-for="EndDate" disabled="disabled" class="form-control" />
+                    <span asp-validation-for="EndDate" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DiscountPercentage" class="form-label">Discount Percentage</label>
+                    <input asp-for="DiscountPercentage" disabled="disabled" class="form-control" />
+                    <span asp-validation-for="DiscountPercentage" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductID" class="form-label">Product ID</label>
+                    <input asp-for="ProductID" disabled="disabled" class="form-control" />
+                    <span asp-validation-for="ProductID" style="color: red;"></span>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-outline-warning">Delete</button>
+                    <div asp-validation-summary="All" style="color: red;"></div>
+
+                    @if (ViewBag.Errors != null)
+                    {
+                        <div>
+                            <ul>
+                                @foreach (string error in ViewBag.Errors)
+                                {
+                                    <li>@error</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

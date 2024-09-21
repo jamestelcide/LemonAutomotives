@@ -4,67 +4,66 @@
     ViewBag.Title = "Edit Product";
     ViewBag.CurrentUrl = "~/Products/Edit";
 }
-<div class="container">
-    <div class="white-container">
-        <h3>Edit Product</h3><br /><br />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a asp-controller="Products" asp-action="Index" class="mb-2">Back to Products List</a>
+            <h3 class="text-center mb-4">Create Products</h3>
 
-        <a asp-controller="Products" asp-action="Index">Back to Product List</a>
+            <form asp-controller="Products" asp-action="Edit" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="ProductName" class="form-label">Product Name</label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductManufacturer" class="form-label">Product Manufacturer</label>
+                    <input asp-for="ProductManufacturer" class="form-control" />
+                    <span asp-validation-for="ProductManufacturer" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductModel" class="form-label">Product Model</label>
+                    <input asp-for="ProductModel" class="form-control" />
+                    <span asp-validation-for="ProductModel" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductPurchasePrice" class="form-label">Product Purchase Price</label>
+                    <input asp-for="ProductPurchasePrice" type="tel" class="form-control" />
+                    <span asp-validation-for="ProductPurchasePrice" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductSalePrice" class="form-label">Product Sale Price</label>
+                    <input asp-for="ProductSalePrice" class="form-control" />
+                    <span asp-validation-for="ProductSalePrice" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductQty" class="form-label">Product Quantity</label>
+                    <input asp-for="ProductQty" class="form-control" />
+                    <span asp-validation-for="ProductQty" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductCommission" class="form-label">Product Commission</label>
+                    <input asp-for="ProductCommission" class="form-control" />
+                    <span asp-validation-for="ProductCommission" style="color: red;"></span>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-outline-warning">Update</button>
+                    <div asp-validation-summary="All" style="color: red;"></div>
 
-        <form asp-controller="Products" asp-action="Edit" method="post">
-            <input type="hidden" asp-for="ProductID" />
-            <div class="form-group">
-                <label asp-for="ProductName">Product Name</label>
-                <input asp-for="ProductName" />
-                <span asp-validation-for="ProductName" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductManufacturer">Product Manufacturer</label>
-                <input asp-for="ProductManufacturer" />
-                <span asp-validation-for="ProductManufacturer" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductModel">Product Model</label>
-                <input asp-for="ProductModel" />
-                <span asp-validation-for="ProductModel" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductPurchasePrice">ProductPurchasePrice</label>
-                <input asp-for="ProductPurchasePrice" type="number" />
-                <span asp-validation-for="ProductPurchasePrice" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductSalePrice">Product Sale Price</label>
-                <input asp-for="ProductSalePrice" type="number" />
-                <span asp-validation-for="ProductSalePrice" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductQty">Product Quantity</label>
-                <input asp-for="ProductQty" type="number"/>
-                <span asp-validation-for="ProductQty" style="color: red;"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductCommission">Product Commission</label>
-                <input asp-for="ProductCommission" type="number" />
-                <span asp-validation-for="ProductCommission" style="color: red;"></span>
-            </div>
-            <div>
-                <button class="btn btn-outline-primary">Update</button>
-                <div asp-validation-summary="All" style="color: red;"></div>
-
-                @if (ViewBag.Errors != null)
-                {
-                    <div>
-                        <ul>
-                            @foreach (string error in ViewBag.Errors)
-                            {
-                                <li>@error</li>
-                            }
-                        </ul>
-                    </div>
-                }
-            </div>
-
-        </form>
+                    @if (ViewBag.Errors != null)
+                    {
+                        <div>
+                            <ul>
+                                @foreach (string error in ViewBag.Errors)
+                                {
+                                    <li>@error</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

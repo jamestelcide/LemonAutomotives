@@ -1,6 +1,7 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
+using LemonAutomotives.Core.Exceptions;
 using LemonAutomotives.Core.ServiceContracts;
 
 namespace LemonAutomotives.Core.Services
@@ -11,6 +12,36 @@ namespace LemonAutomotives.Core.Services
         public ProductService(IProductsRepository productsRepository)
         {
             _productsRepository = productsRepository;
+        }
+
+        public async Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequest)
+        {
+            var existingProduct = await _productsRepository.GetProductByDetailsAsync(
+            productAddRequest.ProductName,
+            productAddRequest.ProductManufacturer,
+            productAddRequest.ProductModel);
+
+            if (existingProduct != null)
+            {
+                throw new DuplicateProductException("A product with the same name, manufacturer, and model already exists.");
+            }
+
+            if (productAddRequest == null)
+            {
+                throw new ArgumentNullException(nameof(productAddRequest));
+            }
+
+            if (productAddRequest.ProductName == null)
+            {
+                throw new ArgumentNullException(nameof(productAddRequest));
+            }
+
+            Products product = productAddRequest.ToProducts();
+
+            product.ProductID = Guid.NewGuid();
+
+            await _productsRepository.AddProductAsync(product);
+            return product.ToProductResponse();
         }
 
         public async Task<List<ProductResponseDto>> GetAllProductsAsync()

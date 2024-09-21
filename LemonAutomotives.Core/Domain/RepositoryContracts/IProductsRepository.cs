@@ -1,10 +1,5 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LemonAutomotives.Core.Domain.RepositoryContracts
 {
@@ -39,5 +34,14 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// <param name="predicate">LINQ expression to check</param>
         /// <returns>All matching Products with a given condition</returns>
         Task<List<Products>> GetFilteredProducts(Expression<Func<Products, bool>> predicate);
+
+        /// <summary>
+        /// Adds a new Product object to the data store
+        /// </summary>
+        /// <param name="product">Product object to add</param>
+        /// <returns>Returns the Product object after adding it to the data store</returns>
+        Task<Products> AddProductAsync(Products product);
+
+        Task<Products?> GetProductByDetailsAsync(string productName, string productManufacturer, string productModel);
     }
 }

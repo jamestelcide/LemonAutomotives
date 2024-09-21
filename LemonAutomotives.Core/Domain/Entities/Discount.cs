@@ -20,7 +20,7 @@ namespace LemonAutomotives.Core.Domain.Entities
         public double DiscountPercentage { get; set; }
 
         //Foreign Key pointing to Product
-        public Guid? ProductID { get; set; }
+        public Guid ProductID { get; set; }
 
         [ForeignKey("ProductID")]
         public virtual Products? Products { get; set; }
