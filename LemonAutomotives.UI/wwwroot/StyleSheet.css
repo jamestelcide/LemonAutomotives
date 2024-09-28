@@ -67,4 +67,15 @@ footer p {
     color: #777;
 }
 
+.footer-text-normal {
+    color: #777 !important;
+}
 
+.footer-headings {
+    color: #fccd0b;
+}
+
+footer {
+    border-top: 1px solid lightgray;
+    margin-top: 80px;
+}

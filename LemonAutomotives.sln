@@ -13,9 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.UI", "LemonAutomotives.UI\LemonAutomotives.UI.csproj", "{6F37ACF5-9815-445C-9ACF-F0A6124ABFD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonAutomotives.ServiceTests", "LemonAutomotives.ServiceTests\LemonAutomotives.ServiceTests.csproj", "{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.ServiceTests", "LemonAutomotives.ServiceTests\LemonAutomotives.ServiceTests.csproj", "{3DC15F95-39AA-4C06-B152-6F5F82DA3D97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonAutomotives.ControllerTests", "LemonAutomotives.ControllerTests\LemonAutomotives.ControllerTests.csproj", "{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LemonAutomotives.ControllerTests", "LemonAutomotives.ControllerTests\LemonAutomotives.ControllerTests.csproj", "{74D74808-A7A8-4C07-94A3-6D4CFB86ECCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F22451D-966F-47DF-92E8-187D83EF33EA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
