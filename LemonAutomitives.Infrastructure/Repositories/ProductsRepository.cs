@@ -28,16 +28,21 @@ namespace LemonAutomotives.Infrastructure.Repositories
             return await _db.Products.ToListAsync();
         }
 
+        public async Task<Products?> GetProductsByIDAsync(Guid? productID)
+        {
+            return await _db.Products.FirstOrDefaultAsync(product => product.ProductID == productID);
+        }
+
+        public async Task<Products?> GetProductByNameAsync(string productName)
+        {
+            return await _db.Products.FirstOrDefaultAsync(p => p.ProductName == productName);
+        }
+
         public async Task<List<Products>> GetFilteredProducts(Expression<Func<Products, bool>> predicate)
         {
             return await _db.Products
                 .Where(predicate)
                 .ToListAsync();
-        }
-
-        public async Task<Products?> GetProductsByIDAsync(Guid? productID)
-        {
-            return await _db.Products.FirstOrDefaultAsync(product => product.ProductID == productID);
         }
 
         public async Task<Products> UpdateProductsAsync(Products product)
@@ -50,20 +55,19 @@ namespace LemonAutomotives.Infrastructure.Repositories
             matchingProduct.ProductManufacturer = product.ProductManufacturer;
             matchingProduct.ProductModel = product.ProductModel;
             matchingProduct.ProductPurchasePrice = product.ProductPurchasePrice;
-            matchingProduct.ProductSalePrice = product.ProductSalePrice;
             matchingProduct.ProductQty = product.ProductQty;
             matchingProduct.ProductCommission = product.ProductCommission;
 
             await _db.SaveChangesAsync();
             return matchingProduct;
         }
-        public async Task<Products?> GetProductByDetailsAsync(string productName, string productManufacturer, string productModel)
+
+        public async Task<bool> DeleteProductByIDAsync(Guid productID)
         {
-            return await _db.Products
-                .FirstOrDefaultAsync(p =>
-                    p.ProductName == productName &&
-                    p.ProductManufacturer == productManufacturer &&
-                    p.ProductModel == productModel);
+            _db.Products.RemoveRange(_db.Products.Where(p => p.ProductID == productID));
+            int rowsDeleted = await _db.SaveChangesAsync();
+
+            return rowsDeleted > 0;
         }
     }
 }

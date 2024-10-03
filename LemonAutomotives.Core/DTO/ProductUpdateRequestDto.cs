@@ -15,9 +15,10 @@ namespace LemonAutomotives.Core.DTO
         public string? ProductManufacturer { get; set; } = string.Empty;
         [Required(ErrorMessage = "Product Model can not be blank")]
         public string? ProductModel { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Product Year can not be blank")]
+        public string? ProductYear { get; set; }
         [Required(ErrorMessage = "Product Purchase Price can not be blank")]
         public double? ProductPurchasePrice { get; set; }
-        public double? ProductSalePrice { get; set; }
         [Required(ErrorMessage = "Product Quantity can not be blank")]
         public int ProductQty { get; set; }
         [Required(ErrorMessage = "Product Commission can not be blank")]
@@ -34,8 +35,8 @@ namespace LemonAutomotives.Core.DTO
                 ProductName = ProductName,
                 ProductManufacturer = ProductManufacturer,
                 ProductModel = ProductModel,
+                ProductYear = ProductYear,
                 ProductPurchasePrice = ProductPurchasePrice,
-                ProductSalePrice = ProductSalePrice,
                 ProductQty = ProductQty,
                 ProductCommission = ProductCommission
             };

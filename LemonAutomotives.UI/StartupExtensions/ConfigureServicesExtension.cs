@@ -12,16 +12,14 @@ namespace LemonAutomotives.UI.StartupExtensions
         public static IServiceCollection ConfigureServices(this IServiceCollection services, IConfiguration configuration) 
         {
             services.AddControllersWithViews();
+            services.AddScoped<IProductsRepository, ProductsRepository>();
+            services.AddScoped<IProductsService, ProductService>();
             services.AddScoped<ISalespersonRepository, SalespersonRepository>();
             services.AddScoped<ISalespersonService, SalespersonService>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerService, CustomerService>();
-            services.AddScoped<IProductsRepository, ProductsRepository>();
-            services.AddScoped<IProductsService, ProductService>();
             services.AddScoped<ISalesRepository, SalesRepository>();
             services.AddScoped<ISalesService, SalesService>();
-            services.AddScoped<IDiscountRepository, DiscountRepository>();
-            services.AddScoped<IDiscountService, DiscountService>();
             services.AddScoped<IQSCRService, QSCRService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>

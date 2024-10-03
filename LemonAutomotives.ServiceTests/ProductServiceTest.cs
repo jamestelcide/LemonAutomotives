@@ -3,15 +3,11 @@ using FluentAssertions;
 using LemonAutomotives.Core.Domain.Entities;
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
+using LemonAutomotives.Core.Exceptions;
 using LemonAutomotives.Core.ServiceContracts;
 using LemonAutomotives.Core.Services;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit.Abstractions;
 
 namespace LemonAutomotives.ServiceTests
@@ -36,6 +32,67 @@ namespace LemonAutomotives.ServiceTests
             _testOutputHelper = testOutputHelper;
         }
 
+        #region AddProductAsync
+        [Fact]
+        public async Task AddProductAsync_NullProductAddRequest_ShouldThrowArgumentNullException()
+        {
+            // Arrange
+            ProductAddRequestDto? productAddRequest = null;
+
+            // Act
+            Func<Task> action = async () => { await _productService.AddProductAsync(productAddRequest); };
+
+            // Assert
+            await action.Should().ThrowAsync<ArgumentNullException>();
+        }
+
+        [Fact]
+        public async Task AddProductAsync_DuplicateProductName_ShouldThrowDuplicateProductException()
+        {
+            // Arrange
+            var existingProduct = _fixture.Build<Products>()
+                .With(p => p.ProductName, "2022 Toyota Corolla")
+                .Without(p => p.Sales)
+                .Create();
+
+            var productAddRequest = _fixture.Build<ProductAddRequestDto>()
+                .With(p => p.ProductYear, "2022")
+                .With(p => p.ProductManufacturer, "Toyota")
+                .With(p => p.ProductModel, "Corolla")
+                .Create();
+
+            _productsRepositoryMock.Setup(p => p.GetAllProductsAsync())
+                .ReturnsAsync(new List<Products> { existingProduct });
+
+            // Act
+            Func<Task> action = async () => { await _productService.AddProductAsync(productAddRequest); };
+
+            // Assert
+            await action.Should().ThrowAsync<DuplicateProductException>()
+                .WithMessage("A product with the name '2022 Toyota Corolla' already exists.");
+        }
+
+        [Fact]
+        public async Task AddProductAsync_ValidProduct_ShouldAddSuccessfully()
+        {
+            // Arrange
+            var productAddRequest = _fixture.Build<ProductAddRequestDto>()
+                .With(p => p.ProductYear, "2022")
+                .With(p => p.ProductManufacturer, "Honda")
+                .With(p => p.ProductModel, "Civic")
+                .Create();
+
+            _productsRepositoryMock.Setup(p => p.GetAllProductsAsync()).ReturnsAsync(new List<Products>());
+            _productsRepositoryMock.Setup(p => p.AddProductAsync(It.IsAny<Products>()));
+
+            // Act
+            ProductResponseDto result = await _productService.AddProductAsync(productAddRequest);
+
+            // Assert
+            result.ProductName.Should().Be("2022 Honda Civic");
+        }
+        #endregion
+
         #region GetAllProductsAsync
         [Fact]
         public async Task GetAllProductsAsync_ToBeEmptyList()
@@ -54,10 +111,10 @@ namespace LemonAutomotives.ServiceTests
         {
             List<Products> products = new List<Products>()
             {
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create()
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create()
             };
 
             List<ProductResponseDto> productResponseListExpected =
@@ -90,10 +147,10 @@ namespace LemonAutomotives.ServiceTests
             //Arrange
             List<Products> prdoucts = new List<Products>()
             {
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create()
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create()
             };
 
             List<ProductResponseDto> productResponseListExpected =
@@ -128,10 +185,10 @@ namespace LemonAutomotives.ServiceTests
             //Arrange
             List<Products> products = new List<Products>()
             {
-                _fixture.Build<Products>().With(p => p.ProductName, "Jeep Grand Cherokee").Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create(),
-                _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create()
+                _fixture.Build<Products>().With(p => p.ProductName, "Jeep Grand Cherokee").Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create()
             };
 
             List<ProductResponseDto> productResponseListExpected =
@@ -159,6 +216,25 @@ namespace LemonAutomotives.ServiceTests
             //Assert
             productsListFromSearch.Should().BeEquivalentTo(productResponseListExpected);
         }
+
+        [Fact]
+        public async Task GetFilteredProductsAsync_InvalidSearchField_ShouldReturnAllProducts()
+        {
+            // Arrange
+            var products = new List<Products>()
+            {
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+                _fixture.Build<Products>().Without(p => p.Sales).Create(),
+            };
+
+            _productsRepositoryMock.Setup(p => p.GetAllProductsAsync()).ReturnsAsync(products);
+
+            // Act
+            var result = await _productService.GetFilteredProductsAsync("InvalidField", "some search");
+
+            // Assert
+            result.Count.Should().Be(products.Count);
+        }
         #endregion
 
         #region GetProductByIDAsync
@@ -175,7 +251,7 @@ namespace LemonAutomotives.ServiceTests
         [Fact]
         public async Task GetProductByIDAsync_ProductID_ToBeSuccessful()
         {
-            Products product = _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create();
+            Products product = _fixture.Build<Products>().Without(p => p.Sales).Create();
             ProductResponseDto productResponseExpected = product.ToProductResponse();
             _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(It.IsAny<Guid>()))
                 .ReturnsAsync(product);
@@ -223,7 +299,7 @@ namespace LemonAutomotives.ServiceTests
         public async Task UpdateProductAsync_AllProductDetails_ToBeSuccessful()
         {
             //Arrange
-            Products product = _fixture.Build<Products>().Without(p => p.Discount).Without(p => p.Sales).Create();
+            Products product = _fixture.Build<Products>().Without(p => p.Sales).Create();
             ProductResponseDto productResponseExpected = product.ToProductResponse();
             ProductUpdateRequestDto productUpdateRequest = productResponseExpected.ToProductUpdateRequest();
 
@@ -235,6 +311,32 @@ namespace LemonAutomotives.ServiceTests
 
             //Assert
             productResponseFromUpdate.Should().Be(productResponseExpected);
+        }
+        #endregion
+
+        #region DeleteProductAsync
+        [Fact]
+        public async Task DeleteProductAsync_ProductNotFound_ShouldReturnFalse()
+        {
+            // Arrange
+            Guid productId = Guid.NewGuid();
+            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(productId)).ReturnsAsync((Products?)null);
+
+            // Act
+            bool result = await _productService.DeleteProductAsync(productId);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public async Task DeleteProductAsync_NullProductID_ShouldThrowArgumentNullException()
+        {
+            // Act
+            Func<Task> action = async () => { await _productService.DeleteProductAsync(null); };
+
+            // Assert
+            await action.Should().ThrowAsync<ArgumentNullException>();
         }
         #endregion
     }

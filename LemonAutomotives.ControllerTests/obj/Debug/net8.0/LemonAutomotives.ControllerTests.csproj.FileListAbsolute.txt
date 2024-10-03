@@ -5,7 +5,6 @@ C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\appsettings.Development.json
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\appsettings.json
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\Seed\customers.json
-C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\Seed\discounts.json
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\Seed\products.json
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\Seed\sales.json
 C:\devops\repos\LemonAutomotives\LemonAutomotives.ControllerTests\bin\Debug\net8.0\Seed\salesperson.json

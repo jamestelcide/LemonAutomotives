@@ -11,38 +11,35 @@
             <h3 class="text-center mb-4">Create Products</h3>
 
             <form asp-controller="Products" asp-action="Edit" method="post">
+                
                 <div class="form-group mb-3">
-                    <label asp-for="ProductName" class="form-label">Product Name</label>
-                    <input asp-for="ProductName" class="form-control" />
-                    <span asp-validation-for="ProductName" style="color: red;"></span>
-                </div>
-                <div class="form-group mb-3">
-                    <label asp-for="ProductManufacturer" class="form-label">Product Manufacturer</label>
+                    <label asp-for="ProductManufacturer" class="form-label">Manufacturer</label>
                     <input asp-for="ProductManufacturer" class="form-control" />
                     <span asp-validation-for="ProductManufacturer" style="color: red;"></span>
                 </div>
                 <div class="form-group mb-3">
-                    <label asp-for="ProductModel" class="form-label">Product Model</label>
+                    <label asp-for="ProductModel" class="form-label">Model</label>
                     <input asp-for="ProductModel" class="form-control" />
                     <span asp-validation-for="ProductModel" style="color: red;"></span>
                 </div>
                 <div class="form-group mb-3">
-                    <label asp-for="ProductPurchasePrice" class="form-label">Product Purchase Price</label>
+                    <label asp-for="ProductYear" class="form-label">Year</label>
+                    <input asp-for="ProductYear" class="form-control" />
+                    <span asp-validation-for="ProductYear" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductPurchasePrice" class="form-label">Purchase Price</label>
                     <input asp-for="ProductPurchasePrice" type="tel" class="form-control" />
                     <span asp-validation-for="ProductPurchasePrice" style="color: red;"></span>
                 </div>
+
                 <div class="form-group mb-3">
-                    <label asp-for="ProductSalePrice" class="form-label">Product Sale Price</label>
-                    <input asp-for="ProductSalePrice" class="form-control" />
-                    <span asp-validation-for="ProductSalePrice" style="color: red;"></span>
-                </div>
-                <div class="form-group mb-3">
-                    <label asp-for="ProductQty" class="form-label">Product Quantity</label>
-                    <input asp-for="ProductQty" class="form-control" />
+                    <label asp-for="ProductQty" class="form-label">Quantity</label>
+                    <input asp-for="ProductQty" class="form-control" min="1" />
                     <span asp-validation-for="ProductQty" style="color: red;"></span>
                 </div>
                 <div class="form-group mb-3">
-                    <label asp-for="ProductCommission" class="form-label">Product Commission</label>
+                    <label asp-for="ProductCommission" class="form-label">Commission</label>
                     <input asp-for="ProductCommission" class="form-control" />
                     <span asp-validation-for="ProductCommission" style="color: red;"></span>
                 </div>
@@ -67,13 +64,9 @@
     </div>
 </div>
 
-
-
 @section scripts
 {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.validator.unobstrusive" asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
 }

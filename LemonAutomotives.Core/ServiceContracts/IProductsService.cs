@@ -13,6 +13,13 @@ namespace LemonAutomotives.Core.ServiceContracts
     public interface IProductsService
     {
         /// <summary>
+        /// Adds a Product object to the list
+        /// </summary>
+        /// <param name="productAddRequestDto">Product to add</param>
+        /// <returns>Returns the Product object after adding it with a newly generated productID</returns>
+        Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequestDto);
+
+        /// <summary>
         /// Returns all Products from the list
         /// </summary>
         /// <returns>All Products from the list as a list of SalespersonResponse</returns>
@@ -39,11 +46,12 @@ namespace LemonAutomotives.Core.ServiceContracts
         /// <param name="productUpdateRequest">Product details to update, including ProductID</param>
         /// <returns>Returns the ProductResponse object after updating</returns>
         Task<ProductResponseDto> UpdateProductAsync(ProductUpdateRequestDto? productUpdateRequest);
+        
         /// <summary>
-        /// Adds a Product object to the list
+        /// Deletes a Product based on the given productID
         /// </summary>
-        /// <param name="productAddRequestDto">Product to add</param>
-        /// <returns>Returns the Product object after adding it with a newly generated productID</returns>
-        Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequestDto);
+        /// <param name="productID"></param>
+        /// <returns>Returns true if delete was successful; otherwise returns false</returns>
+        Task<bool> DeleteProductAsync(Guid? productID);
     }
 }

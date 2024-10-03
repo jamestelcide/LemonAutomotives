@@ -8,7 +8,6 @@ namespace LemonAutomotives.Infrastructure.DbContext
         public ApplicationDbContext(DbContextOptions options) : base(options) { }
 
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
         public virtual DbSet<Salesperson> Salespersons { get; set; }
@@ -18,7 +17,6 @@ namespace LemonAutomotives.Infrastructure.DbContext
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Customer>().ToTable("Customers");
-            modelBuilder.Entity<Discount>().ToTable("Discounts");
             modelBuilder.Entity<Products>().ToTable("Products");
             modelBuilder.Entity<Sales>().ToTable("Sales");
             modelBuilder.Entity<Salesperson>().ToTable("Salespersons");
@@ -32,19 +30,6 @@ namespace LemonAutomotives.Infrastructure.DbContext
                 foreach (Customer customer in customers)
                 {
                     modelBuilder.Entity<Customer>().HasData(customer);
-                }
-            }
-            
-
-            //Seed to Discounts table
-            string discountJson = System.IO.File.ReadAllText("Seed/discounts.json");
-            List<Discount>? discounts = System.Text.Json.JsonSerializer.Deserialize<List<Discount>>(discountJson);
-
-            if(discounts != null)
-            {
-                foreach (Discount discount in discounts)
-                {
-                    modelBuilder.Entity<Discount>().HasData(discount);
                 }
             }
 
@@ -89,12 +74,6 @@ namespace LemonAutomotives.Infrastructure.DbContext
             
 
             //Table Relations
-            modelBuilder.Entity<Products>(entity =>
-            {
-                entity.HasOne(p => p.Discount)
-                .WithOne(d => d.Products)
-                .HasForeignKey<Discount>(d => d.ProductID);
-            });
 
             modelBuilder.Entity<Sales>(entity =>
             {
