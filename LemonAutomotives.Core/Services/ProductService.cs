@@ -14,31 +14,28 @@ namespace LemonAutomotives.Core.Services
             _productsRepository = productsRepository;
         }
 
-        public async Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequest)
+        public async Task<ProductResponseDto> AddProductAsync(ProductAddRequestDto? productAddRequestDto)
         {
-            var existingProduct = await _productsRepository.GetProductByDetailsAsync(
-            productAddRequest.ProductName,
-            productAddRequest.ProductManufacturer,
-            productAddRequest.ProductModel);
-
-            if (existingProduct != null)
+            if (productAddRequestDto == null)
             {
-                throw new DuplicateProductException("A product with the same name, manufacturer, and model already exists.");
+                throw new ArgumentNullException(nameof(productAddRequestDto));
             }
 
-            if (productAddRequest == null)
+            // Construct the full product name
+            string fullProductName = $"{productAddRequestDto.ProductYear} {productAddRequestDto.ProductManufacturer} {productAddRequestDto.ProductModel}";
+
+            // Check if product with the same name already exists
+            var existingProducts = await _productsRepository.GetAllProductsAsync();
+            if (existingProducts.Any(p => p.ProductName == fullProductName))
             {
-                throw new ArgumentNullException(nameof(productAddRequest));
+                throw new DuplicateProductException($"A product with the name '{fullProductName}' already exists.");
             }
 
-            if (productAddRequest.ProductName == null)
-            {
-                throw new ArgumentNullException(nameof(productAddRequest));
-            }
-
-            Products product = productAddRequest.ToProducts();
+            Products product = productAddRequestDto.ToProducts();
 
             product.ProductID = Guid.NewGuid();
+
+            product.ProductName = $"{product.ProductYear} {product.ProductManufacturer} {product.ProductModel}";
 
             await _productsRepository.AddProductAsync(product);
             return product.ToProductResponse();
@@ -48,6 +45,15 @@ namespace LemonAutomotives.Core.Services
         {
             List<Products> products = await _productsRepository.GetAllProductsAsync();
             return products.Select(products => products.ToProductResponse()).ToList();
+        }
+
+        public async Task<ProductResponseDto?> GetProductByIDAsync(Guid? productID)
+        {
+            if (productID == null) { return null; }
+            Products? productFromResponseList = await _productsRepository.GetProductsByIDAsync(productID);
+
+            if (productFromResponseList == null) { return null; }
+            return productFromResponseList.ToProductResponse();
         }
 
         public async Task<List<ProductResponseDto>> GetFilteredProductsAsync(string searchBy, string? searchString)
@@ -71,15 +77,15 @@ namespace LemonAutomotives.Core.Services
                 p.ProductModel != null &&
                 p.ProductModel.Contains(searchString ?? string.Empty)),
 
+                nameof(ProductResponseDto.ProductYear) =>
+                await _productsRepository.GetFilteredProducts(p =>
+                p.ProductModel != null &&
+                p.ProductModel.Contains(searchString ?? string.Empty)),
+
                 nameof(ProductResponseDto.ProductPurchasePrice) =>
                 await _productsRepository.GetFilteredProducts(p =>
                 p.ProductPurchasePrice != null &&
                 p.ProductPurchasePrice == Convert.ToDouble(searchString)),
-
-                nameof(ProductResponseDto.ProductSalePrice) =>
-                await _productsRepository.GetFilteredProducts(p =>
-                p.ProductSalePrice != null &&
-                p.ProductSalePrice == Convert.ToDouble(searchString)),
 
                 nameof(ProductResponseDto.ProductQty) =>
                 await _productsRepository.GetFilteredProducts(p =>
@@ -92,15 +98,6 @@ namespace LemonAutomotives.Core.Services
                 _ => await _productsRepository.GetAllProductsAsync()
             };
             return products.Select(p => p.ToProductResponse()).ToList();
-        }
-
-        public async Task<ProductResponseDto?> GetProductByIDAsync(Guid? productID)
-        {
-            if (productID == null) { return null; }
-            Products? productFromResponseList = await _productsRepository.GetProductsByIDAsync(productID);
-
-            if (productFromResponseList == null) { return null; }
-            return productFromResponseList.ToProductResponse();
         }
 
         public async Task<ProductResponseDto> UpdateProductAsync(ProductUpdateRequestDto? productUpdateRequest)
@@ -119,13 +116,31 @@ namespace LemonAutomotives.Core.Services
             matchingProduct.ProductName = productUpdateRequest.ProductName;
             matchingProduct.ProductManufacturer = productUpdateRequest.ProductManufacturer;
             matchingProduct.ProductModel = productUpdateRequest.ProductModel;
+            matchingProduct.ProductYear = productUpdateRequest.ProductYear;
             matchingProduct.ProductPurchasePrice = productUpdateRequest.ProductPurchasePrice;
-            matchingProduct.ProductSalePrice = productUpdateRequest.ProductSalePrice;
             matchingProduct.ProductQty = productUpdateRequest.ProductQty;
             matchingProduct.ProductCommission = productUpdateRequest.ProductCommission;
 
+            matchingProduct.ProductName = $"{productUpdateRequest.ProductYear} {productUpdateRequest.ProductManufacturer} {productUpdateRequest.ProductModel}";
+
             await _productsRepository.UpdateProductsAsync(matchingProduct);
             return matchingProduct.ToProductResponse();
+        }
+
+        public async Task<bool> DeleteProductAsync(Guid? productID)
+        {
+            if (productID == null)
+            {
+                throw new ArgumentNullException(nameof(productID));
+            }
+
+            Products? product = await _productsRepository.GetProductsByIDAsync(productID.Value);
+
+            if (product == null) { return false; }
+
+            await _productsRepository.DeleteProductByIDAsync(productID.Value);
+
+            return true;
         }
     }
 }

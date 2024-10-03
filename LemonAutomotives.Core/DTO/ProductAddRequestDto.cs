@@ -1,4 +1,5 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
+using LemonAutomotives.Core.Exceptions;
 
 namespace LemonAutomotives.Core.DTO
 {
@@ -11,8 +12,8 @@ namespace LemonAutomotives.Core.DTO
         public string? ProductName { get; set; }
         public string? ProductManufacturer { get; set; }
         public string? ProductModel { get; set; }
+        public string? ProductYear { get; set; }
         public double? ProductPurchasePrice { get; set; }
-        public double? ProductSalePrice { get; set; }
         public int ProductQty { get; set; }
         public double ProductCommission { get; set; }
 
@@ -23,8 +24,8 @@ namespace LemonAutomotives.Core.DTO
                 ProductName = ProductName,
                 ProductManufacturer = ProductManufacturer,
                 ProductModel = ProductModel,
+                ProductYear = ProductYear,
                 ProductPurchasePrice = ProductPurchasePrice,
-                ProductSalePrice = ProductSalePrice,
                 ProductQty = ProductQty,
                 ProductCommission = ProductCommission
             };

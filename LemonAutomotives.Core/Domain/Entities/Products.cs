@@ -15,13 +15,10 @@ namespace LemonAutomotives.Core.Domain.Entities
         public string? ProductManufacturer { get; set; }
         [StringLength(40)]
         public string? ProductModel {  get; set; }
+        public string? ProductYear {  get; set; }
         public double? ProductPurchasePrice { get; set; }
-        public double? ProductSalePrice { get; set; }
         public int ProductQty { get; set; }
         public double ProductCommission { get; set; }
-
-        //Navigation property to Discount
-        public virtual Discount? Discount { get; set; }
 
         //Navigation property to Sales
         public virtual ICollection<Sales>? Sales { get; set; }

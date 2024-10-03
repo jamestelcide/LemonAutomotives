@@ -11,6 +11,7 @@ namespace LemonAutomotives.Core.DTO
         public string? ProductName { get; set; }
         public string? ProductManufacturer { get; set; }
         public string? ProductModel { get; set; }
+        public string? ProductYear { get; set; }
         public double? ProductPurchasePrice { get; set; }
         public double? ProductSalePrice { get; set; }
         public int ProductQty { get; set; }
@@ -65,8 +66,8 @@ namespace LemonAutomotives.Core.DTO
                 ProductName = ProductName,
                 ProductManufacturer = ProductManufacturer,
                 ProductModel = ProductModel,
+                ProductYear = ProductYear,
                 ProductPurchasePrice = ProductPurchasePrice,
-                ProductSalePrice = ProductSalePrice,
                 ProductQty = ProductQty,
                 ProductCommission = ProductCommission
             };
@@ -83,8 +84,8 @@ namespace LemonAutomotives.Core.DTO
                 ProductName = product.ProductName,
                 ProductManufacturer = product.ProductManufacturer,
                 ProductModel = product.ProductModel,
+                ProductYear = product.ProductYear,
                 ProductPurchasePrice = product.ProductPurchasePrice,
-                ProductSalePrice = product.ProductSalePrice,
                 ProductQty = product.ProductQty,
                 ProductCommission = product.ProductCommission
             };
