@@ -77,7 +77,7 @@ namespace LemonAutomotives.ControllerTests
             _productsServiceMock.Setup(p => p.AddProductAsync(It.IsAny<ProductAddRequestDto>()))
                 .ThrowsAsync(new DuplicateProductException("Duplicate product"));
 
-            var productsController = new ProductsController(_productsServiceMock.Object);
+            var productsController = new ProductsController(_productsService);
 
             // Mock TempData
             productsController.TempData = new Mock<ITempDataDictionary>().Object;

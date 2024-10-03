@@ -1,6 +1,5 @@
 ﻿using LemonAutomotives.Core.DTO;
 using LemonAutomotives.Core.ServiceContracts;
-using LemonAutomotives.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LemonAutomotives.UI.Controllers
@@ -22,9 +21,9 @@ namespace LemonAutomotives.UI.Controllers
 
             ViewBag.SearchFields = new Dictionary<string, string>()
             {
-                { nameof(SalesResponseDto.ProductID), "ProductID" },
-                { nameof(SalesResponseDto.SalespersonID), "SalespersonID" },
-                { nameof(SalesResponseDto.CustomerID), "CustomerID" }
+                { nameof(SalesResponseDto.ProductID), "Product" },
+                { nameof(SalesResponseDto.SalespersonID), "Salesperson" },
+                { nameof(SalesResponseDto.CustomerID), "Customer" }
             };
 
             return View(salesList);

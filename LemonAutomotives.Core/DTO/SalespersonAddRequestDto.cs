@@ -1,4 +1,5 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace LemonAutomotives.Core.DTO
 {
@@ -10,6 +11,7 @@ namespace LemonAutomotives.Core.DTO
         public string SalespersonFirstName { get; set; } = string.Empty;
         public string SalespersonLastName { get; set; } = string.Empty;
         public string SalespersonAddress { get; set; } = string.Empty;
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Phone Number.")]
         public string SalespersonPhone { get; set; } = string.Empty;
         public DateTime SalespersonStartDate { get; set; }
 

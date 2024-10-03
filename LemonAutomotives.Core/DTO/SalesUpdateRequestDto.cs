@@ -14,13 +14,13 @@ namespace LemonAutomotives.Core.DTO
     public class SalesUpdateRequestDto
     {
         public Guid SaleID { get; set; }
-        [Required(ErrorMessage = "SalesDate can not be blank")]
-        public DateTime SalesDate { get; set; }
 
-        [Required(ErrorMessage = "ProductID can not be blank")]
+        [Required(ErrorMessage = "Product Name can not be blank")]
         public Guid ProductID { get; set; }
+
         [Required(ErrorMessage = "SalespersonID can not be blank")]
         public Guid SalespersonID { get; set; }
+
         [Required(ErrorMessage = "CustomerID can not be blank")]
         public Guid CustomerID { get; set; }
 

@@ -59,7 +59,6 @@ namespace LemonAutomotives.Core.DTO
             return new SalesUpdateRequestDto()
             {
                 SaleID = SaleID,
-                SalesDate = SalesDate,
                 ProductID = ProductID,
                 SalespersonID = SalespersonID,
                 CustomerID = CustomerID
