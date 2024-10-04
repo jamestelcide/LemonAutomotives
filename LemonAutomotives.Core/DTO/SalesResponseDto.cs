@@ -9,7 +9,7 @@ namespace LemonAutomotives.Core.DTO
     {
         public Guid SaleID { get; set; }
         public string SalespersonID { get; set; }
-        public Guid ProductID { get; set; }
+        public string ProductID { get; set; }
         public Guid CustomerID { get; set; }
         public DateTime SalesDate { get; set; }
         public double PriceSold { get; set; }

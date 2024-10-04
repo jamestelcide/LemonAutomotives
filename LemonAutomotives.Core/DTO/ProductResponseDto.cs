@@ -7,7 +7,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class ProductResponseDto
     {
-        public Guid ProductID { get; set; }
+        public string ProductID { get; set; }
         public string? ProductName { get; set; }
         public string? ProductManufacturer { get; set; }
         public string? ProductModel { get; set; }

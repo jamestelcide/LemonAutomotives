@@ -26,7 +26,7 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// </summary>
         /// <param name="productID">ProductID to search</param>
         /// <returns>Matching Product or null</returns>
-        Task<Products?> GetProductsByIDAsync(Guid? productID);
+        Task<Products?> GetProductsByIDAsync(string? productID);
 
         /// <summary>
         /// Returns a Product object based on the given ProductName if no ProductName is present it will return null
@@ -52,8 +52,8 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// <summary>
         /// Deletes a Product object based on the ProductID
         /// </summary>
-        /// <param name="productID">Product id (Guid) to search</param>
+        /// <param name="productID">ProductID to search</param>
         /// <returns>Returns true if delete is successful; otherwise returns false</returns>
-        Task<bool> DeleteProductByIDAsync(Guid productID);
+        Task<bool> DeleteProductByIDAsync(string productID);
     }
 }

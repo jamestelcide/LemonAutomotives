@@ -59,7 +59,7 @@ namespace LemonAutomotives.UI.Controllers
 
         [HttpGet]
         [Route("[action]/{productID}")]
-        public async Task<IActionResult> Edit(Guid productID)
+        public async Task<IActionResult> Edit(string productID)
         {
             ProductResponseDto? productResponse = await _productsService.GetProductByIDAsync(productID);
             if (productResponse == null) { return RedirectToAction("Index");  }
@@ -92,14 +92,14 @@ namespace LemonAutomotives.UI.Controllers
 
         [HttpGet]
         [Route("[action]/{productID}")]
-        public async Task<IActionResult> Delete(Guid? productID)
+        public async Task<IActionResult> Delete(string? productID)
         {
-            if (!productID.HasValue)
+            if (productID == null)
             {
                 return RedirectToAction("Index");
             }
 
-            ProductResponseDto? productResponse = await _productsService.GetProductByIDAsync(productID.Value);
+            ProductResponseDto? productResponse = await _productsService.GetProductByIDAsync(productID);
             if (productResponse == null) { return RedirectToAction("Index"); }
 
             return View(productResponse);

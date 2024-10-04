@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LemonAutomotives.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241004141807_Initial")]
+    [Migration("20241004182811_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -90,9 +90,8 @@ namespace LemonAutomotives.Infrastructure.Migrations
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Products", b =>
                 {
-                    b.Property<Guid>("ProductID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ProductID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("ProductCommission")
                         .HasColumnType("float");
@@ -125,7 +124,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            ProductID = new Guid("fec15166-ff7e-49a6-b404-aecdd6872cda"),
+                            ProductID = "2012-Fiat-500",
                             ProductCommission = 0.20000000000000001,
                             ProductManufacturer = "Fiat",
                             ProductModel = "500",
@@ -136,7 +135,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         },
                         new
                         {
-                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
+                            ProductID = "2015-Chrysler-300",
                             ProductCommission = 0.089999999999999997,
                             ProductManufacturer = "Chrysler",
                             ProductModel = "300",
@@ -147,7 +146,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         },
                         new
                         {
-                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
+                            ProductID = "2007-Jeep-Grand Cherokee",
                             ProductCommission = 0.050000000000000003,
                             ProductManufacturer = "Jeep",
                             ProductModel = "Grand Cherokee",
@@ -164,11 +163,21 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<double>("Commission")
+                        .HasColumnType("float");
+
+                    b.Property<double>("CommissionEarnings")
+                        .HasColumnType("float");
+
                     b.Property<Guid>("CustomerID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProductID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double>("PriceSold")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("SalesDate")
                         .HasColumnType("datetime2");
@@ -191,24 +200,33 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         new
                         {
                             SaleID = new Guid("b36c0a4f-ba43-4d96-90ff-2b6a968c7981"),
+                            Commission = 0.20000000000000001,
+                            CommissionEarnings = 1000.0,
                             CustomerID = new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"),
-                            ProductID = new Guid("fec15166-ff7e-49a6-b404-aecdd6872cda"),
+                            PriceSold = 5000.0,
+                            ProductID = "2012-Fiat-500",
                             SalesDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SalespersonID = "LHUNTER84140"
                         },
                         new
                         {
                             SaleID = new Guid("3a345fcd-d4a2-4d88-a1e3-06b2777bb438"),
+                            Commission = 0.050000000000000003,
+                            CommissionEarnings = 200.0,
                             CustomerID = new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"),
-                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
+                            PriceSold = 4000.0,
+                            ProductID = "2007-Jeep-Grand Cherokee",
                             SalesDate = new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SalespersonID = "JSTEWART33126"
                         },
                         new
                         {
                             SaleID = new Guid("1dda1c36-4e5f-4f7d-9171-aad4d575c2be"),
+                            Commission = 0.050000000000000003,
+                            CommissionEarnings = 270.0,
                             CustomerID = new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"),
-                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
+                            PriceSold = 6000.0,
+                            ProductID = "2015-Chrysler-300",
                             SalesDate = new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SalespersonID = "DLUCZAK88957"
                         });

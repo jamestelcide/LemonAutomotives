@@ -119,7 +119,7 @@ namespace LemonAutomotives.ControllerTests
         public async Task Delete_ProductNotFound_ShouldRedirectToIndex()
         {
             // Arrange
-            var productId = Guid.NewGuid();
+            var productId = "";
 
             _productsServiceMock.Setup(p => p.GetProductByIDAsync(productId))
                 .ReturnsAsync((ProductResponseDto?)null);
