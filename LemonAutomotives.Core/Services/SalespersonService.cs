@@ -1,6 +1,7 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
+using LemonAutomotives.Core.Helpers;
 using LemonAutomotives.Core.ServiceContracts;
 
 namespace LemonAutomotives.Core.Services
@@ -31,7 +32,7 @@ namespace LemonAutomotives.Core.Services
             Salesperson salesperson = salespersonAddRequest.ToSalesperson();
 
             //Generates a new salespersonID
-            salesperson.SalespersonID = Guid.NewGuid();
+            salesperson.SalespersonID = GenerateSalespersonID(salesperson.SalespersonFirstName, salesperson.SalespersonLastName);
 
             await _salespersonRepository.AddSalespersonAsync(salesperson);
 
