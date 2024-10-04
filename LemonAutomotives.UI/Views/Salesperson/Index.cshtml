@@ -30,6 +30,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">SalespersonID</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Address</th>
@@ -43,6 +44,7 @@
                     @foreach (SalespersonResponseDto salesperson in Model)
                     {
                         <tr scope="row">
+                            <td>@salesperson.SalespersonID</td>
                             <td>@salesperson.SalespersonFirstName</td>
                             <td>@salesperson.SalespersonLastName</td>
                             <td>@salesperson.SalespersonAddress</td>

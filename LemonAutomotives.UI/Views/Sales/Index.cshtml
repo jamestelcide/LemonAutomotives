@@ -30,17 +30,17 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Salesperson</th>
-                        <th scope="col">Customer</th>
+                        <th scope="col">SalespersonID</th>
+                        <th scope="col">ProductID</th>
+                        <th scope="col">CustomerID</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (SalesResponseDto sales in Model)
                     {
                         <tr scope="row">
-                            <td>@sales.ProductID</td>
                             <td>@sales.SalespersonID</td>
+                            <td>@sales.ProductID</td>
                             <td>@sales.CustomerID</td>
                         </tr>
                     }

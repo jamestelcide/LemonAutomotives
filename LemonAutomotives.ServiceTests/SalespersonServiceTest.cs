@@ -91,7 +91,7 @@ namespace LemonAutomotives.ServiceTests
             salespersonResponseExpected.SalespersonID = salespersonResponseFromAdd.SalespersonID;
 
             //Assert
-            salespersonResponseFromAdd.SalespersonID.Should().NotBe(Guid.Empty);
+            salespersonResponseFromAdd.SalespersonID.Should().NotBe(string.Empty);
             salespersonResponseFromAdd.Should().Be(salespersonResponseExpected);
         }
         #endregion
@@ -100,7 +100,7 @@ namespace LemonAutomotives.ServiceTests
         [Fact]
         public async Task GetSalespersonByIDAsync_NullSalespersonID_ToBeNull()
         {
-            Guid? salespersonID = null;
+            string? salespersonID = null;
 
             SalespersonResponseDto? salespersonResponseFromGet = await _salespersonService.GetSalespersonByIDAsync(salespersonID);
 
@@ -112,7 +112,7 @@ namespace LemonAutomotives.ServiceTests
         {
             Salesperson salesperson = _fixture.Build<Salesperson>().Without(s => s.Sales).Create();
             SalespersonResponseDto salespersonResponseExpected = salesperson.ToSalespersonResponse();
-            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<Guid>()))
+            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<string>()))
                 .ReturnsAsync(salesperson);
 
             SalespersonResponseDto? salespersonResponseFromGet = await _salespersonService.GetSalespersonByIDAsync(salesperson.SalespersonID);
@@ -288,7 +288,7 @@ namespace LemonAutomotives.ServiceTests
             SalespersonUpdateRequestDto salespersonUpdateRequest = salespersonResponseExpected.ToSalespersonUpdateRequest();
 
             _salespersonRepositoryMock.Setup(s => s.UpdateSalespersonAsync(It.IsAny<Salesperson>())).ReturnsAsync(salesperson);
-            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<Guid>())).ReturnsAsync(salesperson);
+            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<string>())).ReturnsAsync(salesperson);
 
             //Act
             SalespersonResponseDto salespersonResponseFromUpdate = await _salespersonService.UpdateSalespersonAsync(salespersonUpdateRequest);
@@ -305,8 +305,8 @@ namespace LemonAutomotives.ServiceTests
             //Arrange
             Salesperson salesperson = _fixture.Build<Salesperson>().Without(s => s.Sales).Create();
 
-            _salespersonRepositoryMock.Setup(s => s.DeleteSalespersonByIDAsync(It.IsAny<Guid>())).ReturnsAsync(true);
-            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<Guid>())).ReturnsAsync(salesperson);
+            _salespersonRepositoryMock.Setup(s => s.DeleteSalespersonByIDAsync(It.IsAny<string>())).ReturnsAsync(true);
+            _salespersonRepositoryMock.Setup(s => s.GetSalespersonByIDAsync(It.IsAny<string>())).ReturnsAsync(salesperson);
 
             //Act
             bool isDeleted = await _salespersonService.DeleteSalespersonAsync(salesperson.SalespersonID);
@@ -318,7 +318,7 @@ namespace LemonAutomotives.ServiceTests
         public async Task DeleteSalespersonAsync_InvalidSalespersonID()
         {
             //Act
-            bool isDeleted = await _salespersonService.DeleteSalespersonAsync(Guid.NewGuid());
+            bool isDeleted = await _salespersonService.DeleteSalespersonAsync("");
 
             //Assert
             isDeleted.Should().BeFalse();

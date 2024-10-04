@@ -21,9 +21,9 @@ namespace LemonAutomotives.UI.Controllers
 
             ViewBag.SearchFields = new Dictionary<string, string>()
             {
-                { nameof(SalesResponseDto.ProductID), "Product" },
-                { nameof(SalesResponseDto.SalespersonID), "Salesperson" },
-                { nameof(SalesResponseDto.CustomerID), "Customer" }
+                { nameof(SalesResponseDto.SalespersonID), "SalespersonID" },
+                { nameof(SalesResponseDto.ProductID), "ProductID" },
+                { nameof(SalesResponseDto.CustomerID), "CustomerID" }
             };
 
             return View(salesList);

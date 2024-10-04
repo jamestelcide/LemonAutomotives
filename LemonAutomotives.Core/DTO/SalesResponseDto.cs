@@ -16,7 +16,7 @@ namespace LemonAutomotives.Core.DTO
         public Guid SaleID { get; set; }
         public DateTime SalesDate { get; set; }
         public Guid ProductID { get; set; }
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; }
         public Guid CustomerID { get; set; }
 
         //Compares current object to another object of SalesResponse type and returns true, if both values are the same; otherwise it will return false

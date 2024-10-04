@@ -15,7 +15,7 @@ namespace LemonAutomotives.Core.Domain.Entities
         //Foreign Key pointing to Product
         public Guid ProductID { get; set; }
         //Foreign Key pointing to Salesperson
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; }
         //Foreign Key pointing to Customer
         public Guid CustomerID { get; set; }
         

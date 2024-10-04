@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.Domain.Entities
     public class Salesperson
     {
         [Key]
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; } = string.Empty;
         [StringLength(20)]
         [Required]
         public string SalespersonFirstName { get; set; } = string.Empty;

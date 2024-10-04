@@ -21,6 +21,7 @@ namespace LemonAutomotives.UI.Controllers
 
             ViewBag.SearchFields = new Dictionary<string, string>()
             {
+                { nameof(SalespersonResponseDto.SalespersonID), "SalespersonID" },
                 { nameof(SalespersonResponseDto.SalespersonFirstName), "First Name" },
                 { nameof(SalespersonResponseDto.SalespersonLastName), "Last Name" },
                 { nameof(SalespersonResponseDto.SalespersonAddress), "Address" },
@@ -48,7 +49,7 @@ namespace LemonAutomotives.UI.Controllers
 
         [HttpGet]
         [Route("[action]/{salespersonID}")]
-        public async Task<IActionResult> Edit(Guid salespersonID)
+        public async Task<IActionResult> Edit(string salespersonID)
         {
             SalespersonResponseDto? salespersonResponse = await _salespersonService.GetSalespersonByIDAsync(salespersonID);
             if (salespersonResponse == null) { return RedirectToAction("Index"); }
@@ -73,14 +74,14 @@ namespace LemonAutomotives.UI.Controllers
 
         [HttpGet]
         [Route("[action]/{salespersonID}")]
-        public async Task<IActionResult> Delete(Guid? salespersonID)
+        public async Task<IActionResult> Delete(string? salespersonID)
         {
-            if (!salespersonID.HasValue)
+            if (salespersonID == null)
             {
                 return RedirectToAction("Index");
             }
 
-            SalespersonResponseDto? salespersonResponse = await _salespersonService.GetSalespersonByIDAsync(salespersonID.Value);
+            SalespersonResponseDto? salespersonResponse = await _salespersonService.GetSalespersonByIDAsync(salespersonID);
             if (salespersonResponse == null) { return RedirectToAction("Index"); }
 
             return View(salespersonResponse);

@@ -8,8 +8,8 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class SalespersonUpdateRequestDto
     {
-        public Guid SalespersonID { get; set; }
-        
+        public string SalespersonID { get; set; } = string.Empty;
+
         [Required(ErrorMessage = "Salesperson first name can not be blank")]
         public string SalespersonFirstName { get; set; } = string.Empty;
 

@@ -170,8 +170,9 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.Property<DateTime>("SalesDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("SalespersonID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SalespersonID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SaleID");
 
@@ -186,35 +187,34 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            SaleID = new Guid("a6c0de2a-d93a-42f8-a3e9-c90711f98c6c"),
+                            SaleID = new Guid("b36c0a4f-ba43-4d96-90ff-2b6a968c7981"),
                             CustomerID = new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"),
                             ProductID = new Guid("fec15166-ff7e-49a6-b404-aecdd6872cda"),
                             SalesDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("800c3eb8-a586-48e2-aeba-8fe3d0e20306")
+                            SalespersonID = "LHUNTER84140"
                         },
                         new
                         {
-                            SaleID = new Guid("6655a28d-cd0e-48dd-9eb4-ac3a1bbc9e1b"),
+                            SaleID = new Guid("3a345fcd-d4a2-4d88-a1e3-06b2777bb438"),
                             CustomerID = new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"),
-                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
+                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
                             SalesDate = new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("496cee1e-59b5-4e2c-a6e9-ebfab5d3dd92")
+                            SalespersonID = "JSTEWART33126"
                         },
                         new
                         {
-                            SaleID = new Guid("efcaa7f0-0c41-44b4-a188-cc20781d23c1"),
+                            SaleID = new Guid("1dda1c36-4e5f-4f7d-9171-aad4d575c2be"),
                             CustomerID = new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"),
-                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
+                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
                             SalesDate = new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("0890303a-b802-457a-b56e-aec2bfbead68")
+                            SalespersonID = "DLUCZAK88957"
                         });
                 });
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Salesperson", b =>
                 {
-                    b.Property<Guid>("SalespersonID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SalespersonID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SalespersonAddress")
                         .IsRequired()
@@ -248,39 +248,39 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            SalespersonID = new Guid("800c3eb8-a586-48e2-aeba-8fe3d0e20306"),
+                            SalespersonID = "LHUNTER84140",
                             SalespersonAddress = "2840 Gambler Lane",
                             SalespersonFirstName = "Hunter",
                             SalespersonLastName = "Lahr",
-                            SalespersonPhone = "801-306-2352",
+                            SalespersonPhone = "8013062352",
                             SalespersonStartDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("496cee1e-59b5-4e2c-a6e9-ebfab5d3dd92"),
+                            SalespersonID = "JSTEWART33126",
                             SalespersonAddress = "2408 Hart Ridge Road",
                             SalespersonFirstName = "John",
                             SalespersonLastName = "Stewart",
-                            SalespersonPhone = "201-395-1953",
+                            SalespersonPhone = "2013951953",
                             SalespersonStartDate = new DateTime(2023, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("0890303a-b802-457a-b56e-aec2bfbead68"),
+                            SalespersonID = "DLUCZAK88957",
                             SalespersonAddress = "2949 Juniper Drive",
                             SalespersonFirstName = "Dennis",
                             SalespersonLastName = "Luczak",
-                            SalespersonPhone = "814-393-4893",
+                            SalespersonPhone = "8143934893",
                             SalespersonStartDate = new DateTime(2023, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SalespersonTerminationDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("3c8125d8-71d3-455a-99b9-93baf8b3f6dd"),
+                            SalespersonID = "DROGER52760",
                             SalespersonAddress = "4291 Harley Vincent Drive",
                             SalespersonFirstName = "Debra",
                             SalespersonLastName = "Roger",
-                            SalespersonPhone = "203-387-2069",
+                            SalespersonPhone = "2033872069",
                             SalespersonStartDate = new DateTime(2023, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

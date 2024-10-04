@@ -30,6 +30,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">ProductID</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Manufacturer</th>
                         <th scope="col">Model</th>
@@ -44,6 +45,7 @@
                     @foreach (ProductResponseDto product in Model)
                     {
                         <tr scope="row">
+                            <td>@product.ProductID</td>
                             <td>@product.ProductName</td>
                             <td>@product.ProductManufacturer</td>
                             <td>@product.ProductModel</td>

@@ -7,7 +7,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class SalespersonResponseDto
     {
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; } = string.Empty;
         public string? SalespersonFirstName { get; set; }
         public string? SalespersonLastName { get; set; }
         public string? SalespersonAddress { get; set; }
