@@ -33,6 +33,10 @@
                         <th scope="col">SalespersonID</th>
                         <th scope="col">ProductID</th>
                         <th scope="col">CustomerID</th>
+                        <th scope="col">Sales Date</th>
+                        <th scope="col">Price Sold</th>
+                        <th scope="col">Commission</th>
+                        <th scope="col">Commission Earnings</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +46,10 @@
                             <td>@sales.SalespersonID</td>
                             <td>@sales.ProductID</td>
                             <td>@sales.CustomerID</td>
+                            <td>@sales.SalesDate.ToString("MM/dd/yyyy")</td>
+                            <td>$@sales.PriceSold</td>
+                            <td>@sales.Commission</td>
+                            <td>$@sales.CommissionEarnings</td>
                         </tr>
                     }
                 </tbody>

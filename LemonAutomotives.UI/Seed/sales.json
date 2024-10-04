@@ -1,23 +1,32 @@
 [
   {
     "SaleID": "B36C0A4F-BA43-4D96-90FF-2B6A968C7981",
-    "ProductID": "FEC15166-FF7E-49A6-B404-AECDD6872CDA",
     "SalespersonID": "LHUNTER84140",
+    "ProductID": "FEC15166-FF7E-49A6-B404-AECDD6872CDA",
     "CustomerID": "B4A7761A-C6F5-435F-BDDB-E09550E4F14C",
-    "SalesDate": "2023-01-01"
+    "SalesDate": "2023-01-01",
+    "PriceSold": 3000,
+    "Commission": 0.03,
+    "CommissionEarnings": 90
   },
   {
     "SaleID": "3A345FCD-D4A2-4D88-A1E3-06B2777BB438",
-    "ProductID": "32B4ADB0-6C06-47AC-8EE8-BB3E4C14FE36",
     "SalespersonID": "JSTEWART33126",
+    "ProductID": "32B4ADB0-6C06-47AC-8EE8-BB3E4C14FE36",
     "CustomerID": "9FFEA449-4C4A-4EE3-9311-5F6FB05E3183",
-    "SalesDate": "2023-04-16"
+    "SalesDate": "2023-04-16",
+    "PriceSold": 5000,
+    "Commission": 0.10,
+    "CommissionEarnings": 500
   },
   {
     "SaleID": "1DDA1C36-4E5F-4F7D-9171-AAD4D575C2BE",
-    "ProductID": "B9F2C219-8AFF-4694-B405-2E7CDE670758",
     "SalespersonID": "DLUCZAK88957",
+    "ProductID": "B9F2C219-8AFF-4694-B405-2E7CDE670758",
     "CustomerID": "C79E9FB1-4454-427A-950F-7B2811CD5491",
-    "SalesDate": "2023-08-25"
+    "SalesDate": "2023-08-25",
+    "PriceSold": 6000,
+    "Commission": 0.05,
+    "CommissionEarnings": 300
   }
 ]

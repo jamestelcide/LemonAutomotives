@@ -23,7 +23,11 @@ namespace LemonAutomotives.UI.Controllers
             {
                 { nameof(SalesResponseDto.SalespersonID), "SalespersonID" },
                 { nameof(SalesResponseDto.ProductID), "ProductID" },
-                { nameof(SalesResponseDto.CustomerID), "CustomerID" }
+                { nameof(SalesResponseDto.CustomerID), "CustomerID" },
+                { nameof(SalesResponseDto.SalesDate), "Sales Date" },
+                { nameof(SalesResponseDto.PriceSold), "Price Sold" },
+                { nameof(SalesResponseDto.Commission), "Commission" },
+                { nameof(SalesResponseDto.CommissionEarnings), "CommissionEarnings" }
             };
 
             return View(salesList);

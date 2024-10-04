@@ -1,10 +1,4 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LemonAutomotives.Core.DTO
 {
@@ -14,10 +8,13 @@ namespace LemonAutomotives.Core.DTO
     public class SalesResponseDto
     {
         public Guid SaleID { get; set; }
-        public DateTime SalesDate { get; set; }
-        public Guid ProductID { get; set; }
         public string SalespersonID { get; set; }
+        public Guid ProductID { get; set; }
         public Guid CustomerID { get; set; }
+        public DateTime SalesDate { get; set; }
+        public double PriceSold { get; set; }
+        public double Commission { get; set; }
+        public double CommissionEarnings { get; set; }
 
         //Compares current object to another object of SalesResponse type and returns true, if both values are the same; otherwise it will return false
         public override bool Equals(object? obj)
@@ -59,9 +56,13 @@ namespace LemonAutomotives.Core.DTO
             return new SalesUpdateRequestDto()
             {
                 SaleID = SaleID,
-                ProductID = ProductID,
                 SalespersonID = SalespersonID,
-                CustomerID = CustomerID
+                ProductID = ProductID,
+                CustomerID = CustomerID,
+                SalesDate = SalesDate,
+                PriceSold = PriceSold,
+                Commission = Commission,
+                CommissionEarnings = CommissionEarnings
             };
         }
     }
@@ -74,10 +75,13 @@ namespace LemonAutomotives.Core.DTO
             return new SalesResponseDto()
             {
                 SaleID = sale.SaleID,
-                SalesDate = sale.SalesDate,
-                ProductID = sale.ProductID,
                 SalespersonID = sale.SalespersonID,
-                CustomerID = sale.CustomerID
+                ProductID = sale.ProductID,
+                CustomerID = sale.CustomerID,
+                SalesDate = sale.SalesDate,
+                PriceSold = sale.PriceSold,
+                Commission = sale.Commission,
+                CommissionEarnings = sale.CommissionEarnings
             };
         }
     }
