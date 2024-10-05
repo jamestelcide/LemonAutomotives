@@ -1,4 +1,5 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
+using System.Xml.Linq;
 
 namespace LemonAutomotives.Core.DTO
 {
@@ -7,7 +8,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class CustomerResponseDto
     {
-        public string CustomerID { get; set; }
+        public string CustomerID { get; set; } = string.Empty;
         public string? CustomerFirstName { get; set; }
         public string? CustomerLastName { get; set; }
         public string? CustomerAddress { get; set; }
@@ -29,7 +30,7 @@ namespace LemonAutomotives.Core.DTO
         //Returns a unique key for the current object
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return HashCode.Combine(CustomerID, CustomerAddress);
         }
     }
 

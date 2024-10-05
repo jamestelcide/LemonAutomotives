@@ -34,7 +34,20 @@ namespace LemonAutomotives.Core.Services
 
             Products product = productAddRequestDto.ToProducts();
 
-            product.ProductID = IDGenerationHelper.GenerateProductID(product.ProductManufacturer, product.ProductModel, product.ProductYear);
+            if (product.ProductManufacturer != null && product.ProductModel != null && product.ProductYear != null)
+            {
+                product.ProductID = IDGenerationHelper.GenerateProductID(product.ProductManufacturer, product.ProductModel, product.ProductYear);
+            }
+            else
+            {
+                if (product.ProductManufacturer == null)
+                    throw new ArgumentNullException(nameof(product.ProductManufacturer), "Product Manufacturer is null");
+                if (product.ProductModel == null)
+                    throw new ArgumentNullException(nameof(product.ProductModel), "Product Model is null");
+                if (product.ProductYear == null)
+                    throw new ArgumentNullException(nameof(product.ProductYear), "Product Year is null");
+            }
+
 
             product.ProductName = $"{product.ProductYear} {product.ProductManufacturer} {product.ProductModel}";
 

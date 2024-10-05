@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.Domain.Entities
     public class Products
     {
         [Key]
-        public string ProductID { get; set; }
+        public string ProductID { get; set; } = string.Empty;
         [StringLength(40)]
         public string? ProductName { get; set; }
         [StringLength(40)]

@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.Domain.Entities
     public class Customer
     {
         [Key]
-        public string CustomerID { get; set; }
+        public string CustomerID { get; set; } = string.Empty;
 
         [StringLength(20)]
         [Required(ErrorMessage = "Please enter a valid First Name")]

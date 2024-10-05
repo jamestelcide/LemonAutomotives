@@ -8,9 +8,9 @@ namespace LemonAutomotives.Core.DTO
     public class SalesResponseDto
     {
         public Guid SaleID { get; set; }
-        public string SalespersonID { get; set; }
-        public string ProductID { get; set; }
-        public string CustomerID { get; set; }
+        public string SalespersonID { get; set; } = string.Empty;
+        public string ProductID { get; set; } = string.Empty;
+        public string CustomerID { get; set; } = string.Empty;
         public DateTime SalesDate { get; set; }
         public double PriceSold { get; set; }
         public double Commission { get; set; }
@@ -31,14 +31,14 @@ namespace LemonAutomotives.Core.DTO
         //Returns a unique key for the current object
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return HashCode.Combine(SaleID, ProductID, CustomerID);
         }
 
         public SalesUpdateRequestDto ToSalesUpdateRequest()
         {
-            if (SalesDate == null)
+            if (SalesDate == DateTime.MinValue)
             {
-                throw new InvalidOperationException("Sales date cannot be null");
+                throw new InvalidOperationException("Sales date cannot be Empty");
             }
             if (ProductID == null)
             {
