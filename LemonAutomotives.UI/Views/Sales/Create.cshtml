@@ -12,19 +12,39 @@
 
             <form asp-controller="Sales" asp-action="Create" method="post">
                 <div class="form-group mb-3">
-                    <label asp-for="ProductID" class="form-label">ProductID</label>
-                    <input asp-for="ProductID" class="form-control" />
-                    <span asp-validation-for="ProductID" style="color: red;"></span>
-                </div>
-                <div class="form-group mb-3">
                     <label asp-for="SalespersonID" class="form-label">SalespersonID</label>
-                    <input asp-for="SalespersonID" class="form-control" />
+                    <select asp-for="SalespersonID" class="form-control" asp-items="ViewBag.SalespersonIDs"></select>
                     <span asp-validation-for="SalespersonID" style="color: red;"></span>
                 </div>
                 <div class="form-group mb-3">
+                    <label asp-for="ProductID" class="form-label">ProductID</label>
+                    <select asp-for="ProductID" class="form-control" asp-items="ViewBag.ProductsIDs"></select>
+                    <span asp-validation-for="ProductID" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
                     <label asp-for="CustomerID" class="form-label">CustomerID</label>
-                    <input asp-for="CustomerID" class="form-control" />
+                    <select asp-for="CustomerID" class="form-control" asp-items="ViewBag.CustomerIDs"></select>
                     <span asp-validation-for="CustomerID" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SalesDate" class="form-label">SalesDate</label>
+                    <input asp-for="SalesDate" min="1" class="form-control" />
+                    <span asp-validation-for="SalesDate" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="PriceSold" class="form-label">PriceSold</label>
+                    <input asp-for="PriceSold" class="form-control" />
+                    <span asp-validation-for="PriceSold" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Commission" class="form-label">Commission</label>
+                    <input asp-for="Commission" class="form-control" />
+                    <span asp-validation-for="Commission" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="CommissionEarnings" class="form-label">CommissionEarnings</label>
+                    <input asp-for="CommissionEarnings" class="form-control" />
+                    <span asp-validation-for="CommissionEarnings" style="color: red;"></span>
                 </div>
                 <div class="d-grid">
                     <button class="btn btn-outline-warning">Create</button>
@@ -46,8 +66,6 @@
         </div>
     </div>
 </div>
-
-
 
 @section scripts
 {

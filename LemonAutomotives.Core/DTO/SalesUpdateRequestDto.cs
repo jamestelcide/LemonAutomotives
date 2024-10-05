@@ -17,7 +17,7 @@ namespace LemonAutomotives.Core.DTO
         public string ProductID { get; set; }
 
         [Required(ErrorMessage = "CustomerID can not be blank")]
-        public Guid CustomerID { get; set; }
+        public string CustomerID { get; set; }
         [Required(ErrorMessage = "SalesDate can not be blank")]
         public DateTime SalesDate { get; set; }
         [Required(ErrorMessage = "PriceSold can not be blank")]

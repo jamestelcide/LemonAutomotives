@@ -17,7 +17,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                 name: "Customers",
                 columns: table => new
                 {
-                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CustomerID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CustomerFirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     CustomerLastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     CustomerAddress = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
@@ -75,7 +75,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     CommissionEarnings = table.Column<double>(type: "float", nullable: false),
                     ProductID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     SalespersonID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CustomerID = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,9 +105,9 @@ namespace LemonAutomotives.Infrastructure.Migrations
                 columns: new[] { "CustomerID", "CustomerAddress", "CustomerFirstName", "CustomerLastName", "CustomerPhone", "CustomerStartDate" },
                 values: new object[,]
                 {
-                    { new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"), "3847 Burton Avenue", "Kimberly", "Trombetta", "9015978933", new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"), "4116 Franklin Avenue", "Judith", "Marsh", "3618758716", new DateTime(2023, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"), "2269 Rose Street", "Dennis", "Sandoval", "7082569698", new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { "CU-DENNIS-SANDOVAL-56892", "2269 Rose Street", "Dennis", "Sandoval", "7082569698", new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { "CU-JUDITH-MARSH-36770", "4116 Franklin Avenue", "Judith", "Marsh", "3618758716", new DateTime(2023, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { "CU-KIMBERLY-TROMBETTA-45304", "3847 Burton Avenue", "Kimberly", "Trombetta", "9015978933", new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -115,9 +115,9 @@ namespace LemonAutomotives.Infrastructure.Migrations
                 columns: new[] { "ProductID", "ProductCommission", "ProductManufacturer", "ProductModel", "ProductName", "ProductPurchasePrice", "ProductQty", "ProductYear" },
                 values: new object[,]
                 {
-                    { "2007-Jeep-Grand Cherokee", 0.050000000000000003, "Jeep", "Grand Cherokee", "2007 Jeep Grand Cherokee", 4000.0, 1, "2007" },
-                    { "2012-Fiat-500", 0.20000000000000001, "Fiat", "500", "2012 Fiat 500", 5000.0, 5, "2012" },
-                    { "2015-Chrysler-300", 0.089999999999999997, "Chrysler", "300", "2015 Chrysler 300", 3000.0, 2, "2015" }
+                    { "2007-JEEP-GRAND CHEROKEE", 0.050000000000000003, "Jeep", "Grand Cherokee", "2007 Jeep Grand Cherokee", 4000.0, 1, "2007" },
+                    { "2012-FIAT-500", 0.20000000000000001, "Fiat", "500", "2012 Fiat 500", 5000.0, 5, "2012" },
+                    { "2015-CHRYSLER-300", 0.089999999999999997, "Chrysler", "300", "2015 Chrysler 300", 3000.0, 2, "2015" }
                 });
 
             migrationBuilder.InsertData(
@@ -136,9 +136,9 @@ namespace LemonAutomotives.Infrastructure.Migrations
                 columns: new[] { "SaleID", "Commission", "CommissionEarnings", "CustomerID", "PriceSold", "ProductID", "SalesDate", "SalespersonID" },
                 values: new object[,]
                 {
-                    { new Guid("1dda1c36-4e5f-4f7d-9171-aad4d575c2be"), 0.050000000000000003, 270.0, new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"), 6000.0, "2015-Chrysler-300", new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "DLUCZAK88957" },
-                    { new Guid("3a345fcd-d4a2-4d88-a1e3-06b2777bb438"), 0.050000000000000003, 200.0, new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"), 4000.0, "2007-Jeep-Grand Cherokee", new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "JSTEWART33126" },
-                    { new Guid("b36c0a4f-ba43-4d96-90ff-2b6a968c7981"), 0.20000000000000001, 1000.0, new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"), 5000.0, "2012-Fiat-500", new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "LHUNTER84140" }
+                    { new Guid("1dda1c36-4e5f-4f7d-9171-aad4d575c2be"), 0.050000000000000003, 270.0, "CU-DENNIS-SANDOVAL-56892", 6000.0, "2015-CHRYSLER-300", new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "DLUCZAK88957" },
+                    { new Guid("3a345fcd-d4a2-4d88-a1e3-06b2777bb438"), 0.050000000000000003, 200.0, "CU-KIMBERLY-TROMBETTA-45304", 4000.0, "2007-JEEP-GRAND CHEROKEE", new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "JSTEWART33126" },
+                    { new Guid("b36c0a4f-ba43-4d96-90ff-2b6a968c7981"), 0.20000000000000001, 1000.0, "CU-JUDITH-MARSH-36770", 5000.0, "2012-FIAT-500", new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "LHUNTER84140" }
                 });
 
             migrationBuilder.CreateIndex(

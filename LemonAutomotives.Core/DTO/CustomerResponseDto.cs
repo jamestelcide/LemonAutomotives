@@ -1,10 +1,4 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LemonAutomotives.Core.DTO
 {
@@ -13,7 +7,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class CustomerResponseDto
     {
-        public Guid CustomerID { get; set; }
+        public string CustomerID { get; set; }
         public string? CustomerFirstName { get; set; }
         public string? CustomerLastName { get; set; }
         public string? CustomerAddress { get; set; }

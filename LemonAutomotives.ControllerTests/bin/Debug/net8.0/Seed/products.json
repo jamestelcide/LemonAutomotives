@@ -1,6 +1,6 @@
 [
   {
-    "ProductID": "2012-Fiat-500",
+    "ProductID": "2012-FIAT-500",
     "ProductName": "2012 Fiat 500",
     "ProductManufacturer": "Fiat",
     "ProductModel": "500",
@@ -10,7 +10,7 @@
     "ProductCommission": 0.20
   },
   {
-    "ProductID": "2015-Chrysler-300",
+    "ProductID": "2015-CHRYSLER-300",
     "ProductName": "2015 Chrysler 300",
     "ProductManufacturer": "Chrysler",
     "ProductModel": "300",
@@ -20,7 +20,7 @@
     "ProductCommission": 0.09
   },
   {
-    "ProductID": "2007-Jeep-Grand Cherokee",
+    "ProductID": "2007-JEEP-GRAND CHEROKEE",
     "ProductName": "2007 Jeep Grand Cherokee",
     "ProductManufacturer": "Jeep",
     "ProductModel": "Grand Cherokee",
