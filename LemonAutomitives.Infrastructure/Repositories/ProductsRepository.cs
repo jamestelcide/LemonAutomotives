@@ -28,7 +28,7 @@ namespace LemonAutomotives.Infrastructure.Repositories
             return await _db.Products.ToListAsync();
         }
 
-        public async Task<Products?> GetProductsByIDAsync(Guid? productID)
+        public async Task<Products?> GetProductsByIDAsync(string? productID)
         {
             return await _db.Products.FirstOrDefaultAsync(product => product.ProductID == productID);
         }
@@ -62,7 +62,7 @@ namespace LemonAutomotives.Infrastructure.Repositories
             return matchingProduct;
         }
 
-        public async Task<bool> DeleteProductByIDAsync(Guid productID)
+        public async Task<bool> DeleteProductByIDAsync(string productID)
         {
             _db.Products.RemoveRange(_db.Products.Where(p => p.ProductID == productID));
             int rowsDeleted = await _db.SaveChangesAsync();

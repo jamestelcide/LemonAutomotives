@@ -1,9 +1,4 @@
 ﻿using LemonAutomotives.Core.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LemonAutomotives.Core.ServiceContracts
 {
@@ -30,7 +25,7 @@ namespace LemonAutomotives.Core.ServiceContracts
         /// </summary>
         /// <param name="productID">guid ProductID to search</param>
         /// <returns></returns>
-        Task<ProductResponseDto?> GetProductByIDAsync(Guid? productID);
+        Task<ProductResponseDto?> GetProductByIDAsync(string? productID);
 
         /// <summary>
         /// Returns all Product objects that matches with the given search field and search string
@@ -52,6 +47,6 @@ namespace LemonAutomotives.Core.ServiceContracts
         /// </summary>
         /// <param name="productID"></param>
         /// <returns>Returns true if delete was successful; otherwise returns false</returns>
-        Task<bool> DeleteProductAsync(Guid? productID);
+        Task<bool> DeleteProductAsync(string? productID);
     }
 }

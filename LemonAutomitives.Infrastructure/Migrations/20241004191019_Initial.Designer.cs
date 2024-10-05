@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LemonAutomotives.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240908114745_Add-Migration Initial")]
-    partial class AddMigrationInitial
+    [Migration("20241004191019_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,8 @@ namespace LemonAutomotives.Infrastructure.Migrations
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Customer", b =>
                 {
-                    b.Property<Guid>("CustomerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("CustomerID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CustomerAddress")
                         .IsRequired()
@@ -50,7 +49,8 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CustomerStartDate")
+                    b.Property<DateTime?>("CustomerStartDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.HasKey("CustomerID");
@@ -60,7 +60,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            CustomerID = new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"),
+                            CustomerID = "CU-JUDITH-MARSH-36770",
                             CustomerAddress = "4116 Franklin Avenue",
                             CustomerFirstName = "Judith",
                             CustomerLastName = "Marsh",
@@ -69,7 +69,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"),
+                            CustomerID = "CU-KIMBERLY-TROMBETTA-45304",
                             CustomerAddress = "3847 Burton Avenue",
                             CustomerFirstName = "Kimberly",
                             CustomerLastName = "Trombetta",
@@ -78,7 +78,7 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"),
+                            CustomerID = "CU-DENNIS-SANDOVAL-56892",
                             CustomerAddress = "2269 Rose Street",
                             CustomerFirstName = "Dennis",
                             CustomerLastName = "Sandoval",
@@ -87,61 +87,10 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Discount", b =>
-                {
-                    b.Property<Guid>("DiscountID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("BeginDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("DiscountPercentage")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("ProductID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("DiscountID");
-
-                    b.HasIndex("ProductID")
-                        .IsUnique()
-                        .HasFilter("[ProductID] IS NOT NULL");
-
-                    b.ToTable("Discounts", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            DiscountID = new Guid("83757245-6d97-4147-a208-70a9a9864cf3"),
-                            BeginDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DiscountPercentage = 0.20000000000000001,
-                            EndDate = new DateTime(2023, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            DiscountID = new Guid("de69e429-4d55-4438-981f-5db222251600"),
-                            BeginDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DiscountPercentage = 0.14999999999999999,
-                            EndDate = new DateTime(2023, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            DiscountID = new Guid("f0cd34f3-7ec2-4903-9001-315f662a498d"),
-                            BeginDate = new DateTime(2023, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DiscountPercentage = 0.29999999999999999,
-                            EndDate = new DateTime(2023, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
-                });
-
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Products", b =>
                 {
-                    b.Property<Guid>("ProductID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ProductID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("ProductCommission")
                         .HasColumnType("float");
@@ -164,8 +113,8 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.Property<int>("ProductQty")
                         .HasColumnType("int");
 
-                    b.Property<double?>("ProductSalePrice")
-                        .HasColumnType("float");
+                    b.Property<string>("ProductYear")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductID");
 
@@ -174,33 +123,36 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            ProductID = new Guid("fec15166-ff7e-49a6-b404-aecdd6872cda"),
+                            ProductID = "2012-FIAT-500",
                             ProductCommission = 0.20000000000000001,
                             ProductManufacturer = "Fiat",
                             ProductModel = "500",
-                            ProductName = "Fiat 500",
+                            ProductName = "2012 Fiat 500",
                             ProductPurchasePrice = 5000.0,
-                            ProductQty = 5
+                            ProductQty = 5,
+                            ProductYear = "2012"
                         },
                         new
                         {
-                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
+                            ProductID = "2015-CHRYSLER-300",
                             ProductCommission = 0.089999999999999997,
                             ProductManufacturer = "Chrysler",
                             ProductModel = "300",
-                            ProductName = "Chrysler 300",
+                            ProductName = "2015 Chrysler 300",
                             ProductPurchasePrice = 3000.0,
-                            ProductQty = 2
+                            ProductQty = 2,
+                            ProductYear = "2015"
                         },
                         new
                         {
-                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
+                            ProductID = "2007-JEEP-GRAND CHEROKEE",
                             ProductCommission = 0.050000000000000003,
                             ProductManufacturer = "Jeep",
                             ProductModel = "Grand Cherokee",
-                            ProductName = "Jeep Grand Cherokee",
+                            ProductName = "2007 Jeep Grand Cherokee",
                             ProductPurchasePrice = 4000.0,
-                            ProductQty = 1
+                            ProductQty = 1,
+                            ProductYear = "2007"
                         });
                 });
 
@@ -210,17 +162,29 @@ namespace LemonAutomotives.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CustomerID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double>("Commission")
+                        .HasColumnType("float");
 
-                    b.Property<Guid>("ProductID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double>("CommissionEarnings")
+                        .HasColumnType("float");
+
+                    b.Property<string>("CustomerID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("PriceSold")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("SalesDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("SalespersonID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SalespersonID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SaleID");
 
@@ -235,49 +199,61 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            SaleID = new Guid("a6c0de2a-d93a-42f8-a3e9-c90711f98c6c"),
-                            CustomerID = new Guid("b4a7761a-c6f5-435f-bddb-e09550e4f14c"),
-                            ProductID = new Guid("fec15166-ff7e-49a6-b404-aecdd6872cda"),
+                            SaleID = new Guid("b36c0a4f-ba43-4d96-90ff-2b6a968c7981"),
+                            Commission = 0.20000000000000001,
+                            CommissionEarnings = 1000.0,
+                            CustomerID = "CU-JUDITH-MARSH-36770",
+                            PriceSold = 5000.0,
+                            ProductID = "2012-FIAT-500",
                             SalesDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("800c3eb8-a586-48e2-aeba-8fe3d0e20306")
+                            SalespersonID = "LHUNTER84140"
                         },
                         new
                         {
-                            SaleID = new Guid("6655a28d-cd0e-48dd-9eb4-ac3a1bbc9e1b"),
-                            CustomerID = new Guid("9ffea449-4c4a-4ee3-9311-5f6fb05e3183"),
-                            ProductID = new Guid("b9f2c219-8aff-4694-b405-2e7cde670758"),
+                            SaleID = new Guid("3a345fcd-d4a2-4d88-a1e3-06b2777bb438"),
+                            Commission = 0.050000000000000003,
+                            CommissionEarnings = 200.0,
+                            CustomerID = "CU-KIMBERLY-TROMBETTA-45304",
+                            PriceSold = 4000.0,
+                            ProductID = "2007-JEEP-GRAND CHEROKEE",
                             SalesDate = new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("496cee1e-59b5-4e2c-a6e9-ebfab5d3dd92")
+                            SalespersonID = "JSTEWART33126"
                         },
                         new
                         {
-                            SaleID = new Guid("efcaa7f0-0c41-44b4-a188-cc20781d23c1"),
-                            CustomerID = new Guid("c79e9fb1-4454-427a-950f-7b2811cd5491"),
-                            ProductID = new Guid("32b4adb0-6c06-47ac-8ee8-bb3e4c14fe36"),
+                            SaleID = new Guid("1dda1c36-4e5f-4f7d-9171-aad4d575c2be"),
+                            Commission = 0.050000000000000003,
+                            CommissionEarnings = 270.0,
+                            CustomerID = "CU-DENNIS-SANDOVAL-56892",
+                            PriceSold = 6000.0,
+                            ProductID = "2015-CHRYSLER-300",
                             SalesDate = new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SalespersonID = new Guid("0890303a-b802-457a-b56e-aec2bfbead68")
+                            SalespersonID = "DLUCZAK88957"
                         });
                 });
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Salesperson", b =>
                 {
-                    b.Property<Guid>("SalespersonID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SalespersonID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SalespersonAddress")
+                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("SalespersonFirstName")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("SalespersonLastName")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("SalespersonPhone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("SalespersonStartDate")
@@ -293,50 +269,41 @@ namespace LemonAutomotives.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            SalespersonID = new Guid("800c3eb8-a586-48e2-aeba-8fe3d0e20306"),
+                            SalespersonID = "LHUNTER84140",
                             SalespersonAddress = "2840 Gambler Lane",
                             SalespersonFirstName = "Hunter",
                             SalespersonLastName = "Lahr",
-                            SalespersonPhone = "801-306-2352",
+                            SalespersonPhone = "8013062352",
                             SalespersonStartDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("496cee1e-59b5-4e2c-a6e9-ebfab5d3dd92"),
+                            SalespersonID = "JSTEWART33126",
                             SalespersonAddress = "2408 Hart Ridge Road",
                             SalespersonFirstName = "John",
                             SalespersonLastName = "Stewart",
-                            SalespersonPhone = "201-395-1953",
-                            SalespersonStartDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SalespersonPhone = "2013951953",
+                            SalespersonStartDate = new DateTime(2023, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("0890303a-b802-457a-b56e-aec2bfbead68"),
+                            SalespersonID = "DLUCZAK88957",
                             SalespersonAddress = "2949 Juniper Drive",
                             SalespersonFirstName = "Dennis",
                             SalespersonLastName = "Luczak",
-                            SalespersonPhone = "814-393-4893",
-                            SalespersonStartDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SalespersonPhone = "8143934893",
+                            SalespersonStartDate = new DateTime(2023, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SalespersonTerminationDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            SalespersonID = new Guid("3c8125d8-71d3-455a-99b9-93baf8b3f6dd"),
+                            SalespersonID = "DROGER52760",
                             SalespersonAddress = "4291 Harley Vincent Drive",
                             SalespersonFirstName = "Debra",
                             SalespersonLastName = "Roger",
-                            SalespersonPhone = "203-387-2069",
-                            SalespersonStartDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SalespersonPhone = "2033872069",
+                            SalespersonStartDate = new DateTime(2023, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
-                });
-
-            modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Discount", b =>
-                {
-                    b.HasOne("LemonAutomotives.Core.Domain.Entities.Products", "Products")
-                        .WithOne("Discount")
-                        .HasForeignKey("LemonAutomotives.Core.Domain.Entities.Discount", "ProductID");
-
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Sales", b =>
@@ -373,8 +340,6 @@ namespace LemonAutomotives.Infrastructure.Migrations
 
             modelBuilder.Entity("LemonAutomotives.Core.Domain.Entities.Products", b =>
                 {
-                    b.Navigation("Discount");
-
                     b.Navigation("Sales");
                 });
 

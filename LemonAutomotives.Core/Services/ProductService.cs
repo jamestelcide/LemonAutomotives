@@ -2,6 +2,7 @@
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
 using LemonAutomotives.Core.Exceptions;
+using LemonAutomotives.Core.Helpers;
 using LemonAutomotives.Core.ServiceContracts;
 
 namespace LemonAutomotives.Core.Services
@@ -33,7 +34,20 @@ namespace LemonAutomotives.Core.Services
 
             Products product = productAddRequestDto.ToProducts();
 
-            product.ProductID = Guid.NewGuid();
+            if (product.ProductManufacturer != null && product.ProductModel != null && product.ProductYear != null)
+            {
+                product.ProductID = IDGenerationHelper.GenerateProductID(product.ProductManufacturer, product.ProductModel, product.ProductYear);
+            }
+            else
+            {
+                if (product.ProductManufacturer == null)
+                    throw new ArgumentNullException(nameof(product.ProductManufacturer), "Product Manufacturer is null");
+                if (product.ProductModel == null)
+                    throw new ArgumentNullException(nameof(product.ProductModel), "Product Model is null");
+                if (product.ProductYear == null)
+                    throw new ArgumentNullException(nameof(product.ProductYear), "Product Year is null");
+            }
+
 
             product.ProductName = $"{product.ProductYear} {product.ProductManufacturer} {product.ProductModel}";
 
@@ -47,7 +61,7 @@ namespace LemonAutomotives.Core.Services
             return products.Select(products => products.ToProductResponse()).ToList();
         }
 
-        public async Task<ProductResponseDto?> GetProductByIDAsync(Guid? productID)
+        public async Task<ProductResponseDto?> GetProductByIDAsync(string? productID)
         {
             if (productID == null) { return null; }
             Products? productFromResponseList = await _productsRepository.GetProductsByIDAsync(productID);
@@ -127,18 +141,18 @@ namespace LemonAutomotives.Core.Services
             return matchingProduct.ToProductResponse();
         }
 
-        public async Task<bool> DeleteProductAsync(Guid? productID)
+        public async Task<bool> DeleteProductAsync(string? productID)
         {
             if (productID == null)
             {
                 throw new ArgumentNullException(nameof(productID));
             }
 
-            Products? product = await _productsRepository.GetProductsByIDAsync(productID.Value);
+            Products? product = await _productsRepository.GetProductsByIDAsync(productID);
 
             if (product == null) { return false; }
 
-            await _productsRepository.DeleteProductByIDAsync(productID.Value);
+            await _productsRepository.DeleteProductByIDAsync(productID);
 
             return true;
         }

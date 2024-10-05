@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class ProductUpdateRequestDto
     {
-        public Guid ProductID { get; set; }
+        public string ProductID { get; set; } = string.Empty;
         [Required(ErrorMessage = "Product Name can not be blank")]
         public string? ProductName { get; set; } = string.Empty;
         [Required(ErrorMessage = "Product Manufacturer can not be blank")]

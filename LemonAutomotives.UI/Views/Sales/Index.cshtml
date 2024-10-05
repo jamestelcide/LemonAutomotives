@@ -30,18 +30,26 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Salesperson</th>
-                        <th scope="col">Customer</th>
+                        <th scope="col">SalespersonID</th>
+                        <th scope="col">ProductID</th>
+                        <th scope="col">CustomerID</th>
+                        <th scope="col">Sales Date</th>
+                        <th scope="col">Price Sold</th>
+                        <th scope="col">Commission</th>
+                        <th scope="col">Commission Earnings</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (SalesResponseDto sales in Model)
                     {
                         <tr scope="row">
-                            <td>@sales.ProductID</td>
                             <td>@sales.SalespersonID</td>
+                            <td>@sales.ProductID</td>
                             <td>@sales.CustomerID</td>
+                            <td>@sales.SalesDate.ToString("MM/dd/yyyy")</td>
+                            <td>$@sales.PriceSold</td>
+                            <td>@sales.Commission</td>
+                            <td>$@sales.CommissionEarnings</td>
                         </tr>
                     }
                 </tbody>

@@ -95,7 +95,7 @@ namespace LemonAutomotives.ControllerTests
         public async Task Delete_ValidSalespersonID_ShouldRedirectToIndex()
         {
             // Arrange
-            var salespersonID = Guid.NewGuid();
+            var salespersonID = "RMORRIS88351";
             var salespersonResponse = new SalespersonResponseDto
             {
                 SalespersonID = salespersonID
@@ -131,7 +131,7 @@ namespace LemonAutomotives.ControllerTests
         public async Task Delete_InvalidSalespersonID_ShouldRedirectToIndex()
         {
             // Arrange
-            var salespersonID = Guid.NewGuid();
+            var salespersonID = "WBUCKS33121";
             var salespersonUpdateDto = new SalespersonUpdateRequestDto
             {
                 SalespersonID = salespersonID

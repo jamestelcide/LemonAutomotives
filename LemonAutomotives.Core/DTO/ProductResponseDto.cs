@@ -7,7 +7,7 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class ProductResponseDto
     {
-        public Guid ProductID { get; set; }
+        public string ProductID { get; set; } = string.Empty;
         public string? ProductName { get; set; }
         public string? ProductManufacturer { get; set; }
         public string? ProductModel { get; set; }
@@ -30,7 +30,7 @@ namespace LemonAutomotives.Core.DTO
         //Returns a unique key for the current object
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return HashCode.Combine(ProductID, ProductName);
         }
 
         public ProductUpdateRequestDto ToProductUpdateRequest()
@@ -51,13 +51,13 @@ namespace LemonAutomotives.Core.DTO
             {
                 throw new InvalidOperationException("Product PurchasePrice cannot be null");
             }
-            if (ProductQty == null)
+            if (ProductQty <= 0)
             {
-                throw new InvalidOperationException("Product Quantity cannot be null");
+                throw new InvalidOperationException("Product Quantity cannot be less than or equal to zero");
             }
-            if (ProductCommission == null)
+            if (ProductCommission == 0 || ProductCommission >= 1)
             {
-                throw new InvalidOperationException("Product Commission cannot be null");
+                throw new InvalidOperationException("Product Commission Must be less than 1 and not be 0");
             }
 
             return new ProductUpdateRequestDto()

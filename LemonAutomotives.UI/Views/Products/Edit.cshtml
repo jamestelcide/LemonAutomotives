@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label asp-for="ProductPurchasePrice" class="form-label">Purchase Price</label>
-                    <input asp-for="ProductPurchasePrice" type="tel" class="form-control" />
+                    <input asp-for="ProductPurchasePrice" min="1" class="form-control" />
                     <span asp-validation-for="ProductPurchasePrice" style="color: red;"></span>
                 </div>
 

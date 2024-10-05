@@ -24,7 +24,7 @@ namespace LemonAutomotives.Infrastructure.Repositories
             return await _db.Salespersons.ToListAsync();
         }
 
-        public async Task<Salesperson?> GetSalespersonByIDAsync(Guid salespersonID)
+        public async Task<Salesperson?> GetSalespersonByIDAsync(string salespersonID)
         {
             return await _db.Salespersons.FirstOrDefaultAsync(salesperson => salesperson.SalespersonID == salespersonID);
         }
@@ -54,7 +54,7 @@ namespace LemonAutomotives.Infrastructure.Repositories
             return matchingSalesperson;
         }
 
-        public async Task<bool> DeleteSalespersonByIDAsync(Guid salespersonID)
+        public async Task<bool> DeleteSalespersonByIDAsync(string salespersonID)
         {
             _db.Salespersons.RemoveRange(_db.Salespersons.Where(s => s.SalespersonID == salespersonID));
             int rowsDeleted = await _db.SaveChangesAsync();

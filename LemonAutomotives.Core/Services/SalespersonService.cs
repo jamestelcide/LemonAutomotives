@@ -1,6 +1,7 @@
 ﻿using LemonAutomotives.Core.Domain.Entities;
 using LemonAutomotives.Core.Domain.RepositoryContracts;
 using LemonAutomotives.Core.DTO;
+using LemonAutomotives.Core.Helpers;
 using LemonAutomotives.Core.ServiceContracts;
 
 namespace LemonAutomotives.Core.Services
@@ -31,7 +32,7 @@ namespace LemonAutomotives.Core.Services
             Salesperson salesperson = salespersonAddRequest.ToSalesperson();
 
             //Generates a new salespersonID
-            salesperson.SalespersonID = Guid.NewGuid();
+            salesperson.SalespersonID = IDGenerationHelper.GenerateSalespersonID(salesperson.SalespersonFirstName, salesperson.SalespersonLastName);
 
             await _salespersonRepository.AddSalespersonAsync(salesperson);
 
@@ -44,10 +45,10 @@ namespace LemonAutomotives.Core.Services
             return salespersons.Select(salesperson => salesperson.ToSalespersonResponse()).ToList();
         }
 
-        public async Task<SalespersonResponseDto?> GetSalespersonByIDAsync(Guid? salespersonID)
+        public async Task<SalespersonResponseDto?> GetSalespersonByIDAsync(string? salespersonID)
         {
             if (salespersonID == null) { return null; }
-            Salesperson? salespersonResponseFromList = await _salespersonRepository.GetSalespersonByIDAsync(salespersonID.Value);
+            Salesperson? salespersonResponseFromList = await _salespersonRepository.GetSalespersonByIDAsync(salespersonID);
 
             if (salespersonResponseFromList == null) { return null; }
             return salespersonResponseFromList.ToSalespersonResponse();
@@ -119,18 +120,18 @@ namespace LemonAutomotives.Core.Services
             return matchingSalesperson.ToSalespersonResponse();
         }
 
-        public async Task<bool> DeleteSalespersonAsync(Guid? salespersonID)
+        public async Task<bool> DeleteSalespersonAsync(string? salespersonID)
         {
             if (salespersonID == null)
             {
                 throw new ArgumentNullException(nameof(salespersonID));
             }
 
-            Salesperson? salesperson = await _salespersonRepository.GetSalespersonByIDAsync(salespersonID.Value);
+            Salesperson? salesperson = await _salespersonRepository.GetSalespersonByIDAsync(salespersonID);
 
             if (salesperson == null) { return false; }
 
-            await _salespersonRepository.DeleteSalespersonByIDAsync(salespersonID.Value);
+            await _salespersonRepository.DeleteSalespersonByIDAsync(salespersonID);
 
             return true;
         }

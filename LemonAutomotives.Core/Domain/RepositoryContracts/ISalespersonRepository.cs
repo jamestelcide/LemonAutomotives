@@ -26,7 +26,7 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// </summary>
         /// <param name="SalespersonID">SalespersonID to search</param>
         /// <returns>Matching Salesperson or null</returns>
-        Task<Salesperson?> GetSalespersonByIDAsync(Guid salespersonID);
+        Task<Salesperson?> GetSalespersonByIDAsync(string salespersonID);
 
         /// <summary>
         /// Returns all Salesperson objects based on the given expression
@@ -45,8 +45,8 @@ namespace LemonAutomotives.Core.Domain.RepositoryContracts
         /// <summary>
         /// Deletes a Salesperson object based on the SalespersonID
         /// </summary>
-        /// <param name="salespersonID">Salesperson id (Guid) to search</param>
+        /// <param name="salespersonID">Salesperson id (string) to search</param>
         /// <returns>Returns true if delete is successful; otherwise returns false</returns>
-        Task<bool> DeleteSalespersonByIDAsync(Guid salespersonID);
+        Task<bool> DeleteSalespersonByIDAsync(string salespersonID);
     }
 }

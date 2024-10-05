@@ -8,8 +8,8 @@ namespace LemonAutomotives.Core.DTO
     /// </summary>
     public class SalespersonUpdateRequestDto
     {
-        public Guid SalespersonID { get; set; }
-        
+        public string SalespersonID { get; set; } = string.Empty;
+
         [Required(ErrorMessage = "Salesperson first name can not be blank")]
         public string SalespersonFirstName { get; set; } = string.Empty;
 
@@ -20,7 +20,7 @@ namespace LemonAutomotives.Core.DTO
         public string SalespersonAddress { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson phone number can not be blank")]
-        [Phone(ErrorMessage = "Please enter a valid phone number.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Phone Number.")]
         public string SalespersonPhone { get; set; } = string.Empty;
         
         [Required(ErrorMessage = "Salesperson start date can not be blank")]

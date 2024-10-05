@@ -11,13 +11,16 @@ namespace LemonAutomotives.Core.Domain.Entities
         [Key]
         public Guid SaleID { get; set; }
         public DateTime SalesDate { get; set; }
+        public double PriceSold { get; set; }
+        public double Commission { get; set; }
+        public double CommissionEarnings { get; set; }
         
         //Foreign Key pointing to Product
-        public Guid ProductID { get; set; }
+        public string ProductID { get; set; } = string.Empty;
         //Foreign Key pointing to Salesperson
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; } = string.Empty;
         //Foreign Key pointing to Customer
-        public Guid CustomerID { get; set; }
+        public string CustomerID { get; set; } = string.Empty;
         
 
         [ForeignKey("ProductID")]

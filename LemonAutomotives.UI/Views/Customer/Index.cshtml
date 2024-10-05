@@ -30,6 +30,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">CustomerID</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Address</th>
@@ -41,6 +42,7 @@
                     @foreach (CustomerResponseDto customer in Model)
                     {
                         <tr scope="row">
+                            <td>@customer.CustomerID</td>
                             <td>@customer.CustomerFirstName</td>
                             <td>@customer.CustomerLastName</td>
                             <td>@customer.CustomerAddress</td>

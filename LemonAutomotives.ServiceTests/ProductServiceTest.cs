@@ -241,7 +241,7 @@ namespace LemonAutomotives.ServiceTests
         [Fact]
         public async Task GetProductByIDAsync_NullProductID_ToBeNull()
         {
-            Guid? productID = null;
+            string? productID = null;
 
             ProductResponseDto? productResponseFromGet = await _productService.GetProductByIDAsync(productID);
 
@@ -253,7 +253,7 @@ namespace LemonAutomotives.ServiceTests
         {
             Products product = _fixture.Build<Products>().Without(p => p.Sales).Create();
             ProductResponseDto productResponseExpected = product.ToProductResponse();
-            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(It.IsAny<Guid>()))
+            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(It.IsAny<string>()))
                 .ReturnsAsync(product);
 
             ProductResponseDto? productResponseFromGet = await _productService.GetProductByIDAsync(product.ProductID);
@@ -304,7 +304,7 @@ namespace LemonAutomotives.ServiceTests
             ProductUpdateRequestDto productUpdateRequest = productResponseExpected.ToProductUpdateRequest();
 
             _productsRepositoryMock.Setup(p => p.UpdateProductsAsync(It.IsAny<Products>())).ReturnsAsync(product);
-            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(It.IsAny<Guid>())).ReturnsAsync(product);
+            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(It.IsAny<string>())).ReturnsAsync(product);
 
             //Act
             ProductResponseDto productResponseFromUpdate = await _productService.UpdateProductAsync(productUpdateRequest);
@@ -319,11 +319,11 @@ namespace LemonAutomotives.ServiceTests
         public async Task DeleteProductAsync_ProductNotFound_ShouldReturnFalse()
         {
             // Arrange
-            Guid productId = Guid.NewGuid();
-            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(productId)).ReturnsAsync((Products?)null);
+            string productID = "";
+            _productsRepositoryMock.Setup(p => p.GetProductsByIDAsync(productID)).ReturnsAsync((Products?)null);
 
             // Act
-            bool result = await _productService.DeleteProductAsync(productId);
+            bool result = await _productService.DeleteProductAsync(productID);
 
             // Assert
             result.Should().BeFalse();

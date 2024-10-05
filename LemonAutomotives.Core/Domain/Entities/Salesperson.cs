@@ -8,7 +8,7 @@ namespace LemonAutomotives.Core.Domain.Entities
     public class Salesperson
     {
         [Key]
-        public Guid SalespersonID { get; set; }
+        public string SalespersonID { get; set; } = string.Empty;
         [StringLength(20)]
         [Required]
         public string SalespersonFirstName { get; set; } = string.Empty;
@@ -18,7 +18,7 @@ namespace LemonAutomotives.Core.Domain.Entities
         [StringLength(200)]
         [Required]
         public string SalespersonAddress { get; set; } = string.Empty;
-        [Phone(ErrorMessage = "Please enter a valid phone number.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Phone Number.")]
         [Required]
         public string SalespersonPhone { get; set; } = string.Empty;
         [Required]
