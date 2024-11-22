@@ -11,9 +11,10 @@ A full-stack web application designed to show off my skills in implementing a MV
 * Thourough Unit Tests.
 
 # Technologies Used
-* ASP.NET Core 8 MVC: 
+* ASP.NET Core 8 MVC: ensured a clean and maintainable architecture with controllers, views, and models.
 * Entity Framework Core: Set up and managed a SQL Server database with migrations.
 * xUnit: Wrote unit tests to ensure reliability of the Web API logic.
+* Bootstrap: responsive and modern front-end design, creating a user-friendly interface that adapts to different screen sizes and devices.
 
 # Getting Started
 Prerequisites
