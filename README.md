@@ -19,4 +19,3 @@ A full-stack web application designed to show off my skills in implementing a MV
 # Getting Started
 Prerequisites
 * .NET 8 SDK installed
-* SQL Server set up with a new database called 'LemonAutomotivesDatabase'
